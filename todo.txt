@@ -1,0 +1,10 @@
+﻿Kasha: Karina Ionkina, Dasha(Daria) Shifrina
+APCS1 pd4
+Coding Progression
+* MVP:
+   * The game will run without any sort of algorithm, but will have a set size, set path, a set location for the passenger stations, and a set location for the terminal and train. The player will have a set amount of moves to clear the level by, requiring them to find the quickest path to the passengers and then the terminal. The player will be able to move around on the board by typing in the WASD keys. What is printed in the terminal, or the actual game, will be refreshed with every move made by the player. 
+* Once that is accomplished, the following will be attempted in the given order and hopefully finished:
+   * Instead of typing in WASD keys to move, the player will now have to write set words to move around on the screen. Every move, the words will be refreshed and drawn from a list of vocabulary words. 
+   * One Passenger, Terminal, and Train will be randomly generated and assigned a location on the game board. An algorithm will be written to calculate the quickest Path to the Passenger and then to the Terminal. The amount of moves it will take to complete the quickest path would be the amount of moves the player must finish the level by. The difficulty will always remain the same in that there will only be one Passenger on the map and the size of the map won’t change. So if the player succeeds, the next level would be just as simple for them to do. 
+   * Level component: level difficulty will increase every time the player passes the level. There will be more Passengers added with every level, the difficulty of the words to type in order to make a move will increase, and the size of the game board will increase.
+   * Multiplayer mode: two players will connect to each other’s computer terminals in order to play. The game will be comprised of everything up to this bullet point. Every time this mode is initiated, the two players enter the exact same board game with random difficulty. The player who finds the quicker path through the Passengers to the Terminal will win.
