@@ -12,27 +12,28 @@ public class GridTest{
     }
 	return returnString;
 	}*/
-  public String toString(){
+  public static String toString(int[][] a){
 	String returnString = "";
-	System.out.println(" ___ ___ ___ ___ ___ ___ ___");
-	for (int x=0; x < this.size(); x++) {
-	    for(int i =0; i < this.get(0).size(); < i++){
+	int cols = a.length;
+	int rows = a[0].length;
+	for(int top =0; top < cols; top ++){
+	    returnString += " ___";
+	}
+	returnString += "\n";
+	for (int x=0; x < rows; x++) {
+	    for(int i =0; i < cols; i++){
 	    returnString += "|___";
 	}
 	    returnString += "|\n";
-    }    
+	}
+	return returnString;
+  }
+
 
     public static void main(String[] args){
-	//Object[][] n = new Object[3][3];
-	Object[][] board = new ArrayList[3][3];
-	/*	for(int i=0; i< 3; i++){
-	    for(int x =0; x < 3; x++){
-		board[i][x] = "|____|";
-	    }
-	    }*/
-	System.out.println(board.toString());
+	int[][] board = new int[20][10];
+       	System.out.println(toString(board));
     }
-    
 }
 
    
