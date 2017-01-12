@@ -1,6 +1,10 @@
 import java.util.ArrayList;
+import java.util.*;
+import java.io.*;
 
 public class GridTest{
+    public static String colorStart = "\u001B[31m";
+    public static String colorEnd = "\u001B[0m_";
   public static void populate(String[][] a){
 	String returnString = "";
 	int cols = a.length;
@@ -27,14 +31,20 @@ public class GridTest{
 	    System.out.print("|\n");
 	}
     }
-	   
-		
-	
 
+    public static void addPerson(String[][] a, int xcor, int ycor){
+	a[xcor][ycor] = "|_" + colorStart + "%" + colorEnd;
+    }
+   
+    
+		
     public static void main(String[] args){
-	String[][] board = new String[20][20];
+	String[][] board = new String[10][10];
 	populate(board);
-	board[4][2] = "|_%_"; //this can represent a person
+	addPerson(board, 4, 2);
+	addPerson(board, 5, 9);
+	addPerson(board, 1, 1);
+	addPerson(board, 9, 1);
         printb(board);
     }
 }
