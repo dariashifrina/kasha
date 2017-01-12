@@ -1,18 +1,7 @@
 import java.util.ArrayList;
 
 public class GridTest{
-    /*public String toString(){
-	String returnString = "";
-	System.out.println(" ___ ___ ___ ___ ___ ___ ___");
-	for (int x=0; x < this.length; x++) {
-	    for(int i =0; i < [x].length; i++){
-	    returnString += "|___";
-	}
-	    returnString += "|\n";
-    }
-	return returnString;
-	}*/
-  public static String toString(int[][] a){
+  public static void populate(String[][] a){
 	String returnString = "";
 	int cols = a.length;
 	int rows = a[0].length;
@@ -22,17 +11,31 @@ public class GridTest{
 	returnString += "\n";
 	for (int x=0; x < rows; x++) {
 	    for(int i =0; i < cols; i++){
-	    returnString += "|___";
+	    a[x][i] = "|___";
 	}
-	    returnString += "|\n";
+	    
 	}
-	return returnString;
   }
-
+    
+    public static void printb(String[][] b){
+	int cols = b.length;
+	int rows = b[0].length;
+	for(int c=0; c < cols; c++){
+	    for(int r=0; r < rows; r++){
+		System.out.print(b[c][r]);
+	    }
+	    System.out.print("|\n");
+	}
+    }
+	   
+		
+	
 
     public static void main(String[] args){
-	int[][] board = new int[20][10];
-       	System.out.println(toString(board));
+	String[][] board = new String[20][20];
+	populate(board);
+	board[4][2] = "|_%_"; //this can represent a person
+        printb(board);
     }
 }
 
