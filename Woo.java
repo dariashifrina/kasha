@@ -25,6 +25,12 @@ public class Woo{
 	Board.moveUp(bean, 9,0);
        	System.out.println("You have moved one unit up.");
 	Board.printb(bean);
+
+	System.out.println("Enter 'right' to move one unit left.");
+	String goat = Keyboard.readWord();
+	Board.moveRight(bean, 8,0);
+       	System.out.println("You have moved one unit right.");
+	Board.printb(bean);
 	
     }
 }
