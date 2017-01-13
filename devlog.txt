@@ -52,9 +52,40 @@ tales of wisdom gained...
 ==============================================================
 
 
-yyyy-mm-dd
+2016-01-11
+--------------------------------------------------------------
+Dasha and Karina:: worked on Woo.java in class, used KtS to 
+draw out 2d array algorithm to create a grid
+==============================================================
+
+2016-01-12
+--------------------------------------------------------------
+Dasha and Karina :: began coding grid algorithm in class
+Karina :: completed grid algorithm, which uses a 2d object array
+with each array representing a coordinate on the grid.
+-Created Passenger and Train class whose toStrings prints a red "%"
+and green "@" to represent a passenger and train, respectively
+-addPerson(Object[][] a, int xcor, int ycor): method is used
+to populate the grid by creating a passenger object int the 
+specified coordinate, and addTrain(a, xcor, ycor)
+-setCords(x, y) : accessor for the Passenger and Train classes
+-moveUp(Object[][] a, int xcor, int ycor): object moves up
+one box on the grid
+
+*** obstacles to overcome: ***
+-perhaps create a board class because I have been working with
+it in the static context and need a way to work with it 
+in a nonstatic context
+==============================================================
+
+2016-01-dd
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
+<Member> :: <Thing member did.>
+==============================================================
+
+2016-01-dd
+--------------------------------------------------------------
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
 ==============================================================
