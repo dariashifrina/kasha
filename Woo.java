@@ -1,10 +1,18 @@
 import java.util.ArrayList;
 public class Woo{
-    public String toString(){
-	String boardThing = "";
-	
     public static void main(String[] args){
-	ArrayList[][] board = new ArrayList[5][5];
-	System.out.println(board);
+        
+        adam.populate();
+	adam.printb();
+        adam.addPerson(5, 9);
+        adam.addPerson(1, 2);
+        adam.addTrain(9, 0);
+        adam.printb();
+        System.out.println("======TRAIN MOVES UP======");
+        adam.moveUp(9, 0);
+        adam.printb();
+        System.out.println("======TRAIN MOVES UP======");
+        adam.moveUp(8, 0);
+        adam.printb();
     }
 }
