@@ -1,8 +1,8 @@
-
 public class Board{
+/*instance variables*/
     int cols;
     int rows;
-   
+ 
      public static void populate(Object[][] board){
 	String returnString = "";
 	int cols = board.length;
@@ -51,6 +51,24 @@ public class Board{
 	board[xcor][ycor] = "|___";
 	
     }
+    public static void moveDown(Object[][] board, int xcor, int ycor){
+	Object sam = board[xcor][ycor];
+	board[xcor + 1][ycor] = sam;
+	board[xcor][ycor] = "|___";
+	
+    }
+    public static void moveLeft(Object[][] board, int xcor, int ycor){
+	Object sam = board[xcor][ycor];
+	board[xcor][ycor - 1] = sam;
+	board[xcor][ycor] = "|___";
+	
+    }
+    public static void moveRight(Object[][] board, int xcor, int ycor){
+	Object sam = board[xcor][ycor];
+	board[xcor][ycor + 1] = sam;
+	board[xcor][ycor] = "|___";
+	
+    }
 
     public static void main(String[] args){
 	Object[][] adam = new Object[10][10];
@@ -66,7 +84,15 @@ public class Board{
 	System.out.println("=======TRAIN MOVED UP=========");
 	moveUp(adam, 9 , 0);
 	printb(adam);
-	
+	System.out.println("=======TRAIN MOVED DOWN=========");
+	moveDown(adam, 8 , 0);
+	printb(adam);
+	System.out.println("=======TRAIN MOVED RIGHT=========");
+	moveRight(adam, 9 , 0);
+	printb(adam);
+	System.out.println("=======TRAIN MOVED LEFT=========");
+	moveLeft(adam, 9 , 1);
+	printb(adam);
 
 }
 }
