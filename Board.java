@@ -31,22 +31,23 @@ public class Board{
 		System.out.print(board[c][r]);
 	    }
 	    System.out.print("|\n");
+	
 	}
     }
     /*~~~~~~~~~~~~~~~~~~~ ADDING PASSENGERs ~~~~~~~~~~~~~~~~~~~
-    includes: addTrain
-    precond: slot is open for passenger.
-    postcond: creates a "%" at the passenger's position.
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+      includes: addTrain
+      precond: slot is open for passenger.
+      postcond: creates a "%" at the passenger's position.
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     public static void addPerson (Object[][] board, int xcor, int ycor){
 	Passenger bob = new Passenger();
 	board[xcor][ycor] = bob;
     }
     /*~~~~~~~~~~~~~~~~~~~ ADDING TRAINs ~~~~~~~~~~~~~~~~~~~
-    includes: addTrain
-    precond: slot is open for train.
-    postcond: creates a "@" at the train position.
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+      includes: addTrain
+      precond: slot is open for train.
+      postcond: creates a "@" at the train position.
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     public static void addTrain(Object[][] board, int xcor, int ycor){
 	Train Troy = new Train();
 	Troy.setCords(xcor, ycor);
@@ -54,50 +55,50 @@ public class Board{
     }
 
     /*~~~~~~~~~~~~~~~~~~~ MOVING METHODS ~~~~~~~~~~~~~~~~~~~
-    includes: moveUp, moveDown, moveLeft, moveRight
-    precond: don't try to move outside board.
-    postcond: moves whatever is at the current slot to a new slot.
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+      includes: moveUp, moveDown, moveLeft, moveRight
+      precond: don't try to move outside board.
+      postcond: moves whatever is at the current slot to a new slot.
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     public static void moveUp(Object[][] board, int xcor, int ycor){
 	try{
-	Object sam = board[xcor][ycor];
-	board[xcor - 1][ycor] = sam;
-	board[xcor][ycor] = "|___";
+	    Object sam = board[xcor][ycor];
+	    board[xcor - 1][ycor] = sam;
+	    board[xcor][ycor] = "|___";
 	}
 	catch(ArrayIndexOutOfBoundsException e){
-	System.out.println("You can't move that way!");
+	    System.out.println("You can't move that way!");
 	}	
     }
     public static void moveDown(Object[][] board, int xcor, int ycor){
 	try{
-	Object sam = board[xcor][ycor];
-	board[xcor + 1][ycor] = sam;
-	board[xcor][ycor] = "|___";
+	    Object sam = board[xcor][ycor];
+	    board[xcor + 1][ycor] = sam;
+	    board[xcor][ycor] = "|___";
 	}
 	catch(ArrayIndexOutOfBoundsException e){
-	System.out.println("You can't move that way!");
+	    System.out.println("You can't move that way!");
 	}	
     }
     public static void moveLeft(Object[][] board, int xcor, int ycor){
 	try{
-	Object sam = board[xcor][ycor];
-	board[xcor][ycor - 1] = sam;
-	board[xcor][ycor] = "|___";
+	    Object sam = board[xcor][ycor];
+	    board[xcor][ycor - 1] = sam;
+	    board[xcor][ycor] = "|___";
 	}
 	catch(ArrayIndexOutOfBoundsException e){
-	System.out.println("You can't move that way!");
+	    System.out.println("You can't move that way!");
 	}	
     }
     public static void moveRight(Object[][] board, int xcor, int ycor){
 	try{
-	Object sam = board[xcor][ycor];
-	board[xcor][ycor + 1] = sam;
-	board[xcor][ycor] = "|___";
+	    Object sam = board[xcor][ycor];
+	    board[xcor][ycor + 1] = sam;
+	    board[xcor][ycor] = "|___";
 	}
 	catch(ArrayIndexOutOfBoundsException e){
-	System.out.println("You can't move that way!");	
+	    System.out.println("You can't move that way!");	
 	}
-}
+    }
 
     public static void main(String[] args){
 	Object[][] adam = new Object[10][10];
@@ -122,5 +123,5 @@ public class Board{
 	System.out.println("=======TRAIN MOVED LEFT=========");
 	moveLeft(adam, 9 , 1);
 	printb(adam);
-}
+    }
 }
