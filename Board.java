@@ -124,4 +124,3 @@ public class Board{
 	printb(adam);
 }
 }
-   

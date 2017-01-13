@@ -22,7 +22,7 @@ public class Woo{
  
 	System.out.println("Enter 'up' to move one unit up.");
 	String clive = Keyboard.readWord();
-	Board.moveUp(bean, 9,1);
+	Board.moveUp(bean, 9,0);
        	System.out.println("You have moved one unit up.");
 	Board.printb(bean);
 	
