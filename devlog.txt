@@ -73,9 +73,8 @@ specified coordinate, and addTrain(a, xcor, ycor)
 one box on the grid
 
 *** obstacles to overcome: ***
--perhaps create a board class because I have been working with
-it in the static context and need a way to work with it 
-in a nonstatic context
+-The board methods are in a static context, need to make
+work in a nonstatic context
 ==============================================================
 
 2016-01-dd
