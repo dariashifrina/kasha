@@ -1,6 +1,8 @@
 import cs1.Keyboard;
 public class Woo2{
+    //public static int level = 1;
     public static String clearScreen = "\u001b[2J\u001b[H";
+    
         public static void main(String[] args){
 	System.out.println("Welcome to Tardy Terminal! Enter your name to continue...");
         System.out.println("your job as a train conductor is to pick up the passengers.");
@@ -8,8 +10,9 @@ public class Woo2{
         System.out.println("Your train and position on the board is \u001B[32m@\u001B[0m .");
         System.out.println("Here's your grid, populated with some people:\n");
 
-	Board2 boardy = new Board2(10,10);
-	
+	//int dog = level * 6;
+	Board2 boardy = new Board2(10, 10);
+	boardy.addTerminal();
 	boardy.addTrain();
 	boardy.addPerson(5, 6);
 	boardy.addPerson(8,3);
@@ -35,6 +38,8 @@ public class Woo2{
 	System.out.println("===MOVED DOWNn=====");
 	boardy.moveDown();
 	System.out.println(boardy);
+
+	
 	
 	
 	
