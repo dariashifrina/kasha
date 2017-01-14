@@ -17,12 +17,27 @@ public class Woo{
 	Board.addPerson(bean, 5, 6);
 	Board.addPerson(bean, 8, 2);
 	Board.addPerson(bean, 7, 9);
-	Board.addTrain(bean, 9, 0);
+	Train dad = new Train();
+	Board.addTrain(bean, dad, 9, 0);
 	Board.printb(bean);
+	String adam = "";
+	while(adam != "end"){
+	    adam = Keyboard.readWord();
+		System.out.println(clearScreen);
+		Board.moveUp(bean, dad, dad.getXcor(), dad.getYcor());
+		Board.printb(bean);}
+    }
+}
 	    
+<<<<<<< HEAD
  
 	System.out.println("Enter 'up' to move one unit up.");
 	String clive = Keyboard.readWord()
+=======
+	
+	/*System.out.println("Enter 'up' to move one unit up.");
+	String clive = Keyboard.readWord();
+>>>>>>> cb8652cb8907df0f19cddcc60e16d4c7148b6f82
 	System.out.println(clearScreen);
 	Board.moveUp(bean, 9,0);
        	System.out.println("You have moved one unit up.");
@@ -33,7 +48,5 @@ public class Woo{
 	System.out.println(clearScreen);
 	Board.moveRight(bean, 8,0);
        	System.out.println("You have moved one unit right.");
-	Board.printb(bean);
-	
-    }
-}
+	Board.printb(bean); */
+
