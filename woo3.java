@@ -22,19 +22,22 @@ public class woo3{
         while(gameOver == false){
         Jim = Keyboard.readWord();
         System.out.println(Jim);
-        if(Jim == "up"){
+        if(Jim.equals("up")){
             boardy.moveUp();
-        }
-        if(Jim == "down"){
+	        }
+        if(Jim.equals("down")){
             boardy.moveDown();
-        }
-        if(Jim == "left"){
+	        }
+        if(Jim.equals("left")){
             boardy.moveLeft();
-        }
-        if(Jim == "right"){
+	        }
+        if(Jim.equals("right")){
             boardy.moveRight();
-        }
-                System.out.print(clearScreen + boardy);
+	        }
+	else{
+	    System.out.println("Not a valid move! Please enter 'up', 'down', 'left' or 'right'");
+	}
+        System.out.print(clearScreen + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP());
 }
     }
 }

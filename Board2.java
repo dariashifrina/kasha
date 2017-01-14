@@ -77,6 +77,9 @@ public class Board2{
 	int x = me.getXcor() - 1;
 	int y = me.getYcor();
 	try{
+	     if (board[x][y] instanceof Passenger){
+		me.inP(); //increases counter of passengers by 1
+	    }
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
@@ -92,6 +95,9 @@ public class Board2{
 	int x = me.getXcor() + 1;
 	int y = me.getYcor();
 	try{
+	     if (board[x][y] instanceof Passenger){
+		me.inP(); //increases counter of passengers by 1
+	    }
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
@@ -107,6 +113,9 @@ public class Board2{
 	int x = me.getXcor();
 	int y = me.getYcor() + 1;
 	try{
+	    if (board[x][y] instanceof Passenger){
+		me.inP(); //increases counter of passengers by 1
+	    }
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
@@ -121,6 +130,9 @@ public class Board2{
 	int x = me.getXcor();
 	int y = me.getYcor() - 1;
 	try{
+	     if (board[x][y] instanceof Passenger){
+		me.inP(); //increases counter of passengers by 1
+	    }
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
