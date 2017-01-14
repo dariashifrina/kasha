@@ -28,12 +28,9 @@ public class Woo{
 		Board.printb(bean);}
     }
 }
-	    
-<<<<<<< HEAD
+
  
-	System.out.println("Enter 'up' to move one unit up.");
-	String clive = Keyboard.readWord()
-=======
+
 	
 	/*System.out.println("Enter 'up' to move one unit up.");
 	String clive = Keyboard.readWord();
