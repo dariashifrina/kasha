@@ -14,8 +14,8 @@ public class woo3{
         Board2 boardy = new Board2(3, 3);
         boardy.addTerminal();
         boardy.addTrain();
-        boardy.addPerson(1, 1);
-        boardy.addPerson(1,2);
+	Passenger oo = new Passenger(1, 1);
+	Passenger girl = new Passenger(1, 2);
         System.out.println(clearScreen + boardy);
         String Jim;
         while( !(boardy.getGameEnd()) || (boardy.me.getP() != boardy.getPpl())){

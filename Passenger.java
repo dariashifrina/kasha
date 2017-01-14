@@ -5,6 +5,12 @@ public class Passenger{
     private int xcor;
     private int ycor;
     
+    public Passenger(int x, int y){
+	//Board2.addPerson(this, x, y);
+	xcor = x;
+	ycor = y;
+    }
+
     public String toString(){
 	return "|_" + "%" + "_";
     }
@@ -12,5 +18,10 @@ public class Passenger{
     public void setCords(int x, int y){
 	xcor = x;
 	ycor = y;
+    }
+
+
+    public static void main(String[] args){
+	Board2.addPerson(this, xcor, ycor);
     }
 }

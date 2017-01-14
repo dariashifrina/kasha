@@ -51,9 +51,9 @@ public class Board2{
       precond: slot is open for passenger.
       postcond: creates a "%" at the passenger's position.
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-   public void addPerson (int xcor, int ycor){
-	Passenger bob = new Passenger();
-	board[xcor][ycor] = bob;
+    public void addPerson (Passenger bob, int xcor, int ycor){
+       	board[xcor][ycor] = bob;
+	bob.setCords(xcor, ycor);
 	ppl += 1;
     }
 
@@ -174,18 +174,23 @@ public class Board2{
 	}	
     }	
 	
-	    public boolean getGameEnd(){
+    public boolean getGameEnd(){
         return gameOver;
     }
     public int getPpl(){
 	return ppl;
     }
-    
+
+
+    /*    public int calcFastestPath(){
+	int sam = 0;
+	for (int i = 0; i< ppl; i++){ */
+	    
 
 
     public static void main(String[] args){
-	Board2 adam = new Board2(4,4);
-	adam.addPerson(3,0);
-	System.out.print(adam);
+	//	Board2 adam = new Board2(4,4);
+	//adam.addPerson(3,0);
+	//System.out.print(adam);
     }
 }
