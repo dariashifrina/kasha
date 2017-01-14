@@ -3,6 +3,7 @@ public class Board2{
 	private int cols;
 	private int rows;
     private Object[][] board;
+    Train me = new Train();
     public Board2(int cols2, int rows2){
     	    cols = cols2;
     		rows = rows2;
@@ -49,11 +50,86 @@ public class Board2{
 	board[xcor][ycor] = bob;
     }
 
+    /*~~~~~~~~~~~~~~~~~~~ ADDING TRAINs ~~~~~~~~~~~~~~~~~~~
+      includes: addTrain
+      precond: slot is open for train.
+      postcond: creates a "@" at the train position.
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    public void addTrain(){
+	board[rows - 1][0] = me;
+	me.setCords(rows - 1, 0);
+    }
+
+    /*~~~~~~~~~~~~~~~~~~~ MOVING TRAIN METHODS ~~~~~~~~~~~~~~~~~~~
+      includes: moveUp, moveDown, moveLeft, moveRight
+      precond: don't try to move outside board.
+      postcond: moves whatever is at the current slot to a new slot.
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    public void moveUp(){
+	int x = me.getXcor() - 1;
+	int y = me.getYcor();
+	try{
+	    board[x][y] = me;
+	    board[me.getXcor()][me.getYcor()] = "|___";
+	    me.setCords(x, y);
+	}
+	catch(ArrayIndexOutOfBoundsException e){
+	    System.out.println("You can't move that way!");
+	}	
+    }	
+
+
+    //MOVE DOWN
+    public void moveDown(){
+	int x = me.getXcor() + 1;
+	int y = me.getYcor();
+	try{
+	    board[x][y] = me;
+	    board[me.getXcor()][me.getYcor()] = "|___";
+	    me.setCords(x, y);
+	}
+	catch(ArrayIndexOutOfBoundsException e){
+	    System.out.println("You can't move that way!");
+	}	
+    }	
+	
+
+    //MOVE RIGHT
+    public void moveRight(){
+	int x = me.getXcor();
+	int y = me.getYcor() + 1;
+	try{
+	    board[x][y] = me;
+	    board[me.getXcor()][me.getYcor()] = "|___";
+	    me.setCords(x, y);
+	}
+	catch(ArrayIndexOutOfBoundsException e){
+	    System.out.println("You can't move that way!");
+	}	
+    }	
+	
+    //MOVE LEFT
+        public void moveLeft(){
+	int x = me.getXcor();
+	int y = me.getYcor() - 1;
+	try{
+	    board[x][y] = me;
+	    board[me.getXcor()][me.getYcor()] = "|___";
+	    me.setCords(x, y);
+	}
+	catch(ArrayIndexOutOfBoundsException e){
+	    System.out.println("You can't move that way!");
+	}	
+    }	
+	
+
+
     public static void main(String[] args){
 	Board2 adam = new Board2(4,4);
 	adam.addPerson(3,0);
 	System.out.print(adam);
 }
+    
 }
 /*
 	addPerson(adam, 5, 6);
@@ -82,32 +158,13 @@ public class Board2{
    /* 
   
 
-    /*~~~~~~~~~~~~~~~~~~~ ADDING TRAINs ~~~~~~~~~~~~~~~~~~~
-      includes: addTrain
-      precond: slot is open for train.
-      postcond: creates a "@" at the train position.
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
    /* public static void addTrain(Object[][] board, int xcor, int ycor){
 	Train Troy = new Train();
 	Troy.setCords(xcor, ycor);
 	board[xcor][ycor] = Troy;
     }
 
-    /*~~~~~~~~~~~~~~~~~~~ MOVING METHODS ~~~~~~~~~~~~~~~~~~~
-      includes: moveUp, moveDown, moveLeft, moveRight
-      precond: don't try to move outside board.
-      postcond: moves whatever is at the current slot to a new slot.
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
- /*   public static void moveUp(Object[][] board, int xcor, int ycor){
-	try{
-	    Object sam = board[xcor][ycor];
-	    board[xcor - 1][ycor] = sam;
-	    board[xcor][ycor] = "|___";
-	}
-	catch(ArrayIndexOutOfBoundsException e){
-	    System.out.println("You can't move that way!");
-	}	
-    }
+
     public static void moveDown(Object[][] board, int xcor, int ycor){
 	try{
 	    Object sam = board[xcor][ycor];
