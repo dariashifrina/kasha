@@ -1,5 +1,6 @@
 import cs1.Keyboard;
 public class Woo{
+    public static String clearScreen = "\u001b[2J\u001b[H";
     public static void main(String[] args){
         System.out.println("Welcome to Tardy Terminal! Enter your name to continue...");
 	String jim = Keyboard.readWord();
@@ -22,12 +23,14 @@ public class Woo{
  
 	System.out.println("Enter 'up' to move one unit up.");
 	String clive = Keyboard.readWord();
+	System.out.println(clearScreen);
 	Board.moveUp(bean, 9,0);
        	System.out.println("You have moved one unit up.");
 	Board.printb(bean);
-
+	
 	System.out.println("Enter 'right' to move one unit left.");
 	String goat = Keyboard.readWord();
+	System.out.println(clearScreen);
 	Board.moveRight(bean, 8,0);
        	System.out.println("You have moved one unit right.");
 	Board.printb(bean);
