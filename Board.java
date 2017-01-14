@@ -2,6 +2,8 @@ public class Board{
 /*instance variables*/
     int cols;
     int rows;
+    private static int myx = 0;
+    private static int myy = 0;
  
      public static void populate(Object[][] board){
 	String returnString = "";
@@ -48,10 +50,11 @@ public class Board{
       precond: slot is open for train.
       postcond: creates a "@" at the train position.
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    public static void addTrain(Object[][] board, int xcor, int ycor){
-	Train Troy = new Train();
-	Troy.setCords(xcor, ycor);
+    public static void addTrain(Object[][] board, Train Troy, int xcor, int ycor){
+       	Troy.setCords(xcor, ycor);
 	board[xcor][ycor] = Troy;
+	myx = xcor;
+	myy = ycor;
     }
 
     /*~~~~~~~~~~~~~~~~~~~ MOVING METHODS ~~~~~~~~~~~~~~~~~~~
@@ -59,11 +62,13 @@ public class Board{
       precond: don't try to move outside board.
       postcond: moves whatever is at the current slot to a new slot.
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    public static void moveUp(Object[][] board, int xcor, int ycor){
+    public static void moveUp(Object[][] board, Train Troy,  int xcor, int ycor){
 	try{
-	    Object sam = board[xcor][ycor];
-	    board[xcor - 1][ycor] = sam;
+	    Troy.setCords(xcor - 1, ycor);
+	    board[xcor - 1][ycor] = Troy;
 	    board[xcor][ycor] = "|___";
+	    myx = xcor - 1;
+	    myy = ycor;
 	}
 	catch(ArrayIndexOutOfBoundsException e){
 	    System.out.println("You can't move that way!");
@@ -74,6 +79,8 @@ public class Board{
 	    Object sam = board[xcor][ycor];
 	    board[xcor + 1][ycor] = sam;
 	    board[xcor][ycor] = "|___";
+	    myx = xcor + 1;
+	    myy = ycor;
 	}
 	catch(ArrayIndexOutOfBoundsException e){
 	    System.out.println("You can't move that way!");
@@ -84,6 +91,8 @@ public class Board{
 	    Object sam = board[xcor][ycor];
 	    board[xcor][ycor - 1] = sam;
 	    board[xcor][ycor] = "|___";
+	    myx = xcor;
+	    myy = ycor - 1;
 	}
 	catch(ArrayIndexOutOfBoundsException e){
 	    System.out.println("You can't move that way!");
@@ -94,14 +103,17 @@ public class Board{
 	    Object sam = board[xcor][ycor];
 	    board[xcor][ycor + 1] = sam;
 	    board[xcor][ycor] = "|___";
+	    myx = xcor;
+	    myy = ycor + 1;
 	}
 	catch(ArrayIndexOutOfBoundsException e){
 	    System.out.println("You can't move that way!");	
 	}
     }
 
+
     public static void main(String[] args){
-	Object[][] adam = new Object[10][10];
+	/*Object[][] adam = new Object[10][10];
 	populate(adam);
 	addPerson(adam, 5, 6);
 	addPerson(adam, 8, 2);
@@ -122,6 +134,6 @@ public class Board{
 	printb(adam);
 	System.out.println("=======TRAIN MOVED LEFT=========");
 	moveLeft(adam, 9 , 1);
-	printb(adam);
+	printb(adam); */
     }
 }

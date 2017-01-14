@@ -11,4 +11,10 @@ public class Train{
 	xcor = x;
 	ycor = y;
     }
+    public  int getXcor(){
+	return xcor;}
+    
+    public int getYcor(){
+	return ycor;
+    }
 }
