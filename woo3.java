@@ -11,14 +11,14 @@ public class woo3{
         System.out.println("Here's your grid, populated with some people:\n");
 
         //int dog = level * 6;                                                                      
-        Board2 boardy = new Board2(10, 10);
+        Board2 boardy = new Board2(3, 3);
         boardy.addTerminal();
         boardy.addTrain();
-        boardy.addPerson(5, 6);
-        boardy.addPerson(8,3);
+        boardy.addPerson(1, 1);
+        boardy.addPerson(1,2);
         System.out.println(clearScreen + boardy);
         String Jim;
-        while(boardy.getGameEnd() == false){
+        while( !(boardy.getGameEnd()) || (boardy.me.getP() != boardy.getPpl())){
         Jim = Keyboard.readWord();
         System.out.println(Jim);
         if(Jim.equals("up")){
@@ -36,29 +36,10 @@ public class woo3{
 	else{
 	    System.out.println("Not a valid move! Please enter 'up', 'down', 'left' or 'right'");
 	}
-        System.out.print(clearScreen + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP());
-}
+        System.out.print(clearScreen + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + " boardypp; = " + boardy.getPpl());
+	}
     }
 }
 
 
 
-
-       /* System.out.println("===MOVED UP=====");
-        boardy.moveUp();
-        System.out.println(boardy);
-        Jim = Keyboard.readWord();
-	System.out.print(clearScreen);
-        System.out.println("===MOVED RIGHT=====");
-        boardy.moveRight();
-        System.out.println(boardy);
-        Jim = Keyboard.readWord();
-	System.out.print(clearScreen);
-        System.out.println("===MOVED LEFT=====");
-        boardy.moveLeft();
-        System.out.println(boardy);
-        Jim = Keyboard.readWord();
-	System.out.print(clearScreen);
-        System.out.println("===MOVED DOWNn=====");
-        boardy.moveDown();
-        System.out.println(boardy);*/

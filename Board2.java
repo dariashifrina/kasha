@@ -4,13 +4,14 @@ public class Board2{
     private int cols;
     private int rows;
     private Object[][] board;
+    private  int ppl = 0;
     Train me = new Train();
     Terminal Teddy = new Terminal();
 
 
     public Board2(int cols2, int rows2){
     		gameOver = false;
-    	    cols = cols2;
+		cols = cols2;
     		rows = rows2;
     		board = new Object[rows2][cols2];
     		populate();
@@ -53,6 +54,7 @@ public class Board2{
    public void addPerson (int xcor, int ycor){
 	Passenger bob = new Passenger();
 	board[xcor][ycor] = bob;
+	ppl += 1;
     }
 
     /*~~~~~~~~~~~~~~~~~~~ ADDING TRAINs ~~~~~~~~~~~~~~~~~~~
@@ -83,6 +85,10 @@ public class Board2{
 		me.inP(); //increases counter of passengers by 1
 	    }
 	   	if (board[x][y] instanceof Terminal){
+		    if(me.getP() != ppl){
+			System.out.println("PICK UP THE DARN PASSENGERS");
+			return;
+		    }
 		gameOver = true; //increases counter of passengers by 1
 	    }
 	    board[x][y] = me;
@@ -104,8 +110,12 @@ public class Board2{
 		me.inP(); //increases counter of passengers by 1
 	    }
 	   	if (board[x][y] instanceof Terminal){
-		gameOver = true; //increases counter of passengers by 1
-	    }
+		    if(me.getP() != ppl){
+			System.out.println("PICK UP THE DARN PASSENGERS");
+			return;
+		    }
+	       		gameOver = true; //increases counter of passengers by 1
+		}
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
@@ -113,7 +123,7 @@ public class Board2{
 	catch(ArrayIndexOutOfBoundsException e){
 	    System.out.println("You can't move that way!");
 	}	
-    }	
+    }
 	
 
     //MOVE RIGHT
@@ -125,6 +135,10 @@ public class Board2{
 		me.inP(); //increases counter of passengers by 1
 	    }
 	   	if (board[x][y] instanceof Terminal){
+		    if(me.getP() != ppl){
+			System.out.println("PICK UP THE DARN PASSENGERS");
+			return;
+		    }
 		gameOver = true; //increases counter of passengers by 1
 	    }
 	    board[x][y] = me;
@@ -145,6 +159,10 @@ public class Board2{
 		me.inP(); //increases counter of passengers by 1
 	    }
 	   	if (board[x][y] instanceof Terminal){
+		    if(me.getP() != ppl){
+			System.out.println("PICK UP THE DARN PASSENGERS");
+			return;
+		    }
 		gameOver = true; //increases counter of passengers by 1
 	    }
 	    board[x][y] = me;
@@ -158,6 +176,9 @@ public class Board2{
 	
 	    public boolean getGameEnd(){
         return gameOver;
+    }
+    public int getPpl(){
+	return ppl;
     }
     
 
