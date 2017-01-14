@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Board2{
     /*instance variables*/
     private boolean gameOver;
@@ -5,6 +7,9 @@ public class Board2{
     private int rows;
     private Object[][] board;
     private  int ppl = 0;
+    private ArrayList<Integer> passengerXCor;
+    private ArrayList<Integer> passengerYCor;
+    private int fastestMoves = 0;
     Train me = new Train();
     Terminal Teddy = new Terminal();
 
@@ -14,6 +19,8 @@ public class Board2{
 		cols = cols2;
     		rows = rows2;
     		board = new Object[rows2][cols2];
+    		passengerXCor = new ArrayList<Integer>();
+    		passengerYCor = new ArrayList<Integer>();
     		populate();
     }
    public void populate(){
@@ -51,12 +58,15 @@ public class Board2{
       precond: slot is open for passenger.
       postcond: creates a "%" at the passenger's position.
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    public void addPerson (Passenger bob, int xcor, int ycor){
-       	board[xcor][ycor] = bob;
+    public void addPerson (int xcor, int ycor){
+    Passenger bob = new Passenger(0,0);
+    board[xcor][ycor] = bob;
 	bob.setCords(xcor, ycor);
 	ppl += 1;
+	passengerXCor.add(xcor);
+	passengerYCor.add(ycor);
     }
-
+      
     /*~~~~~~~~~~~~~~~~~~~ ADDING TRAINs ~~~~~~~~~~~~~~~~~~~
       includes: addTrain
       precond: slot is open for train.
@@ -182,15 +192,28 @@ public class Board2{
     }
 
 
-    /*    public int calcFastestPath(){
-	int sam = 0;
-	for (int i = 0; i< ppl; i++){ */
+    public void calcFastestPath(){
+	int checkingXCor = me.getXcor();
+	int checkingYCor = me.getYcor();
+	for (int i = 0; i< ppl + 1; i++){ 
+		if(i < ppl){
+			fastestMoves += Math.abs(passengerXCor.get(i) - checkingXCor) + Math.abs(passengerYCor.get(i) - checkingYCor);
+			checkingXCor = passengerXCor.get(i);
+			checkingYCor = passengerYCor.get(i);
+		}
+		else{
+			fastestMoves += Math.abs(Teddy.getXCor() - checkingXCor) + Math.abs(Teddy.getYCor() - checkingYCor);
+		}
+	}
+}
+
+public int getFastestMoves(){
+	return fastestMoves;
+}
+
 	    
 
 
     public static void main(String[] args){
-	//	Board2 adam = new Board2(4,4);
-	//adam.addPerson(3,0);
-	//System.out.print(adam);
     }
 }

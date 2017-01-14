@@ -11,16 +11,16 @@ public class woo3{
         System.out.println("Here's your grid, populated with some people:\n");
 
         //int dog = level * 6;                                                                      
-        Board2 boardy = new Board2(3, 3);
+        Board2 boardy = new Board2(5, 5);
         boardy.addTerminal();
         boardy.addTrain();
-	Passenger oo = new Passenger(1, 1);
-	Passenger girl = new Passenger(1, 2);
-        System.out.println(clearScreen + boardy);
+	    boardy.addPerson(1, 1);
+	    boardy.addPerson(4,4);
+        boardy.calcFastestPath();
+        System.out.println(clearScreen + boardy + boardy.getFastestMoves());
         String Jim;
         while( !(boardy.getGameEnd()) || (boardy.me.getP() != boardy.getPpl())){
         Jim = Keyboard.readWord();
-        System.out.println(Jim);
         if(Jim.equals("up")){
             boardy.moveUp();
 	        }
@@ -34,7 +34,7 @@ public class woo3{
             boardy.moveRight();
 	        }
 	else{
-	    System.out.println("Not a valid move! Please enter 'up', 'down', 'left' or 'right'");
+	    System.out.println(Jim + " is Not a valid move! Please enter 'up', 'down', 'left' or 'right'");
 	}
         System.out.print(clearScreen + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + " boardypp; = " + boardy.getPpl());
 	}

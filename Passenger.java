@@ -22,6 +22,6 @@ public class Passenger{
 
 
     public static void main(String[] args){
-	Board2.addPerson(this, xcor, ycor);
+	//Board2.addPerson(this, xcor, ycor);
     }
 }

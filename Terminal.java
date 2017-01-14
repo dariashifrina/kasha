@@ -8,7 +8,12 @@ public class Terminal{
     public String toString(){
 	return "|_" + "$" + "_";
     }
-
+    public int getXCor(){
+        return xcor;
+    }
+    public int getYCor(){
+        return ycor;
+    }
     public void setCords(int x, int y){
 	xcor = x;
 	ycor = y;
