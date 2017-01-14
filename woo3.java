@@ -4,6 +4,7 @@ public class woo3{
     public static String clearScreen = "\u001b[2J\u001b[H";
 
     public static void main(String[] args){
+        boolean gameOver = false;
         System.out.println("Welcome to Tardy Terminal! Enter your name to continue...");
         System.out.println("your job as a train conductor is to pick up the passengers.");
         System.out.println("On your board, they are represented as \u001B[31m%\u001B[0m .");
@@ -18,9 +19,30 @@ public class woo3{
         boardy.addPerson(8,3);
         System.out.println(clearScreen + boardy);
         String Jim;
+        while(gameOver == false){
         Jim = Keyboard.readWord();
-        System.out.print(clearScreen);
-        System.out.println("===MOVED UP=====");
+        System.out.println(Jim);
+        if(Jim == "up"){
+            boardy.moveUp();
+        }
+        if(Jim == "down"){
+            boardy.moveDown();
+        }
+        if(Jim == "left"){
+            boardy.moveLeft();
+        }
+        if(Jim == "right"){
+            boardy.moveRight();
+        }
+                System.out.print(clearScreen + boardy);
+}
+    }
+}
+
+
+
+
+       /* System.out.println("===MOVED UP=====");
         boardy.moveUp();
         System.out.println(boardy);
         Jim = Keyboard.readWord();
@@ -37,6 +59,4 @@ public class woo3{
 	System.out.print(clearScreen);
         System.out.println("===MOVED DOWNn=====");
         boardy.moveDown();
-        System.out.println(boardy);
-    }
-}
+        System.out.println(boardy);*/
