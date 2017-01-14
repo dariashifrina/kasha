@@ -14,8 +14,8 @@ public class woo3{
         Board2 boardy = new Board2(5, 5);
         boardy.addTerminal();
         boardy.addTrain();
-	    boardy.addPerson(1, 1);
-	    boardy.addPerson(4,4);
+	boardy.addPerson(1, 1);
+        boardy.addPerson(4,4);
         boardy.calcFastestPath();
         System.out.println(clearScreen + boardy + boardy.getFastestMoves());
         String Jim;
@@ -36,8 +36,7 @@ public class woo3{
 	else{
 	    System.out.println(Jim + " is Not a valid move! Please enter 'up', 'down', 'left' or 'right'");
 	}
-        System.out.print(clearScreen + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + " boardypp; = " + boardy.getPpl());
-	}
+        System.out.print(clearScreen + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + "  Num you need to pick upr=  " + boardy.getPpl() + "\n NUM STEPS YOU HAVE TAKEN: " + boardy.me.getM());}
     }
 }
 

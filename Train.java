@@ -2,6 +2,7 @@ public class Train{
     private int xcor = 0;
     private int ycor = 0;
     private int numPickedUp = 0;
+    private int numMoves = 0;
     private boolean gameOver = false;
     public String colorStart = "\u001B[32m"; //GREEN
     public String colorEnd = "\u001B[0m";
@@ -30,5 +31,11 @@ public class Train{
     }
     public boolean getGameEnd(){
         return gameOver;
+    }
+    public int getM(){
+	return numMoves;
+    }
+    public void inM(){
+	numMoves += 1;
     }
 }

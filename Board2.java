@@ -59,7 +59,7 @@ public class Board2{
       postcond: creates a "%" at the passenger's position.
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     public void addPerson (int xcor, int ycor){
-    Passenger bob = new Passenger(0,0);
+    Passenger bob = new Passenger(xcor, ycor);
     board[xcor][ycor] = bob;
 	bob.setCords(xcor, ycor);
 	ppl += 1;
@@ -104,6 +104,7 @@ public class Board2{
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
+	    me.inM();
 	}
 	catch(ArrayIndexOutOfBoundsException e){
 	    System.out.println("You can't move that way!");
@@ -129,6 +130,7 @@ public class Board2{
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
+	    me.inM();
 	}
 	catch(ArrayIndexOutOfBoundsException e){
 	    System.out.println("You can't move that way!");
@@ -154,6 +156,7 @@ public class Board2{
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
+	    me.inM();
 	}
 	catch(ArrayIndexOutOfBoundsException e){
 	    System.out.println("You can't move that way!");
@@ -178,6 +181,7 @@ public class Board2{
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
+	    me.inM();
 	}
 	catch(ArrayIndexOutOfBoundsException e){
 	    System.out.println("You can't move that way!");
