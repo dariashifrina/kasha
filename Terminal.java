@@ -6,7 +6,7 @@ public class Terminal{
     private int ycor;
     
     public String toString(){
-	return "|_" + colorStart + "$" + colorEnd + "_";
+	return "|_" + "$" + "_";
     }
 
     public void setCords(int x, int y){

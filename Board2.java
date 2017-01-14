@@ -1,5 +1,6 @@
 public class Board2{
     /*instance variables*/
+    private boolean gameOver;
     private int cols;
     private int rows;
     private Object[][] board;
@@ -8,6 +9,7 @@ public class Board2{
 
 
     public Board2(int cols2, int rows2){
+    		gameOver = false;
     	    cols = cols2;
     		rows = rows2;
     		board = new Object[rows2][cols2];
@@ -80,6 +82,9 @@ public class Board2{
 	     if (board[x][y] instanceof Passenger){
 		me.inP(); //increases counter of passengers by 1
 	    }
+	   	if (board[x][y] instanceof Terminal){
+		gameOver = true; //increases counter of passengers by 1
+	    }
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
@@ -97,6 +102,9 @@ public class Board2{
 	try{
 	     if (board[x][y] instanceof Passenger){
 		me.inP(); //increases counter of passengers by 1
+	    }
+	   	if (board[x][y] instanceof Terminal){
+		gameOver = true; //increases counter of passengers by 1
 	    }
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
@@ -116,6 +124,9 @@ public class Board2{
 	    if (board[x][y] instanceof Passenger){
 		me.inP(); //increases counter of passengers by 1
 	    }
+	   	if (board[x][y] instanceof Terminal){
+		gameOver = true; //increases counter of passengers by 1
+	    }
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
@@ -133,6 +144,9 @@ public class Board2{
 	     if (board[x][y] instanceof Passenger){
 		me.inP(); //increases counter of passengers by 1
 	    }
+	   	if (board[x][y] instanceof Terminal){
+		gameOver = true; //increases counter of passengers by 1
+	    }
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
 	    me.setCords(x, y);
@@ -142,6 +156,9 @@ public class Board2{
 	}	
     }	
 	
+	    public boolean getGameEnd(){
+        return gameOver;
+    }
     
 
 
