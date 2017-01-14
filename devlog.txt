@@ -63,18 +63,22 @@ draw out 2d array algorithm to create a grid
 Dasha and Karina :: began coding grid algorithm in class
 Karina :: completed grid algorithm, which uses a 2d object array
 with each array representing a coordinate on the grid.
--Created Passenger and Train class whose toStrings prints a red "%"
+         -Created Passenger and Train class whose toStrings prints a red "%"
 and green "@" to represent a passenger and train, respectively
--addPerson(Object[][] a, int xcor, int ycor): method is used
+         -addPerson(Object[][] a, int xcor, int ycor): method is used
 to populate the grid by creating a passenger object int the 
 specified coordinate, and addTrain(a, xcor, ycor)
--setCords(x, y) : accessor for the Passenger and Train classes
--moveUp(Object[][] a, int xcor, int ycor): object moves up
+         -setCords(x, y) : accessor for the Passenger and Train classes
+         -moveUp(Object[][] a, int xcor, int ycor): object moves up
 one box on the grid
+Dasha ::finished moveDown/moveLeft/moveRight(Object[][] a, int xcor, int ycor):
+object can now move in any direction
+         -catch exceptions if object is attempted to be moved off the board.
 
 *** obstacles to overcome: ***
 -The board methods are in a static context, need to make
 work in a nonstatic context
+-Make terminal reprint board on the same line instead of printing a board out each time.
 ==============================================================
 
 2016-01-dd
