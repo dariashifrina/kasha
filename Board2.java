@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Board2{
     /*instance variables*/
     private boolean gameOver;
+    private boolean lost;
     private int cols;
     private int rows;
     private Object[][] board;
@@ -16,6 +17,7 @@ public class Board2{
 
     public Board2(int cols2, int rows2){
     		gameOver = false;
+    		lost = false;
 		cols = cols2;
     		rows = rows2;
     		board = new Object[rows2][cols2];
@@ -23,6 +25,14 @@ public class Board2{
     		passengerYCor = new ArrayList<Integer>();
     		populate();
     }
+   /*public void reset(){
+    		gameOver = false;
+    		lost = false;
+    		board = new Object[rows][cols];
+    		passengerXCor = new ArrayList<Integer>();
+    		passengerYCor = new ArrayList<Integer>();
+    		populate();
+   }*/
    public void populate(){
 /*	String returnString = "";
 	for(int top =0; top < cols; top ++){
@@ -59,12 +69,17 @@ public class Board2{
       postcond: creates a "%" at the passenger's position.
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     public void addPerson (int xcor, int ycor){
+    if ((board[xcor][ycor] instanceof Passenger) || (board[xcor][ycor] instanceof Terminal) || (board[xcor][ycor] instanceof Train)){
+    	addPerson((int) (Math.random()) * rows, (int) (Math.random() * cols));
+	    }
+	else{
     Passenger bob = new Passenger(xcor, ycor);
     board[xcor][ycor] = bob;
 	bob.setCords(xcor, ycor);
 	ppl += 1;
 	passengerXCor.add(xcor);
 	passengerYCor.add(ycor);
+}
     }
       
     /*~~~~~~~~~~~~~~~~~~~ ADDING TRAINs ~~~~~~~~~~~~~~~~~~~
@@ -191,6 +206,9 @@ public class Board2{
     public boolean getGameEnd(){
         return gameOver;
     }
+    public void setGameEnd(boolean here){
+        gameOver = here;
+    }
     public int getPpl(){
 	return ppl;
     }
@@ -215,9 +233,21 @@ public int getFastestMoves(){
 	return fastestMoves;
 }
 
-	    
-
-
+public int getRows(){
+	return rows;
+}
+public int getCols(){
+	return cols;
+}
+public boolean getLost(){
+	return lost;
+} 
+public void setLost(boolean here){
+	lost = here;
+}
+public int boardGetM(){
+	return me.getM();
+}
     public static void main(String[] args){
     }
 }

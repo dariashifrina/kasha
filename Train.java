@@ -35,6 +35,9 @@ public class Train{
     public int getM(){
 	return numMoves;
     }
+    public void setM(int x){
+    numMoves = x;
+    }
     public void inM(){
 	numMoves += 1;
     }
