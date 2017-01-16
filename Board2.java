@@ -11,6 +11,7 @@ public class Board2{
     private ArrayList<Integer> passengerXCor;
     private ArrayList<Integer> passengerYCor;
     private int fastestMoves = 0;
+    private long StartTime;
     private int Time = 0;
     Train me = new Train();
     Terminal Teddy = new Terminal();
@@ -25,15 +26,10 @@ public class Board2{
     		passengerXCor = new ArrayList<Integer>();
     		passengerYCor = new ArrayList<Integer>();
     		populate();
+		gameOver = false;
     }
-   /*public void reset(){
-    		gameOver = false;
-    		lost = false;
-    		board = new Object[rows][cols];
-    		passengerXCor = new ArrayList<Integer>();
-    		passengerYCor = new ArrayList<Integer>();
-    		populate();
-   }*/
+
+
    public void populate(){
 /*	String returnString = "";
 	for(int top =0; top < cols; top ++){
@@ -115,7 +111,7 @@ public class Board2{
 			System.out.println("PICK UP THE DARN PASSENGERS");
 			return;
 		    }
-		gameOver = true; //increases counter of passengers by 1
+		gameOver = true; 
 	    }
 	    board[x][y] = me;
 	    board[me.getXcor()][me.getYcor()] = "|___";
@@ -250,7 +246,7 @@ public int boardGetM(){
 	return me.getM();
 }
 
-public  int timeLeft(long StartTime){
+public  int timeLeft(){
     int n = Time;
     int secondsLeft;
         long Syd = 0;
@@ -267,12 +263,17 @@ public  int timeLeft(long StartTime){
     }
     public void resetTime(){
 	Time = 0;
+	StartTime = 0;
     }
-
     
-    public boolean onTime(long StartTime){
-	return timeLeft(StartTime) > 0;
+    public void setStartTime(long n){
+	StartTime = n;
+    }
+    
+    public boolean onTime(){
+	return timeLeft() > 0;
     } 
+
     
     public static void main(String[] args){
     }

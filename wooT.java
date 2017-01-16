@@ -2,7 +2,6 @@ import cs1.Keyboard;
 public class wooT{
     //public static int level = 1;                                                                  
     public static String clearScreen = "\u001b[2J\u001b[H";
-    private static long Started;
     public static void game(Board2 boardy, int difficulty){
         boardy.addTerminal();
         boardy.addTrain();
@@ -14,11 +13,12 @@ public class wooT{
         //.addPerson(4,4);
         boardy.calcFastestPath();
         System.out.println(clearScreen + boardy);
+	long StartTime;
         String Jim;
-	long StartTime = System.currentTimeMillis();
-	Started = StartTime;
-        while( !(boardy.getGameEnd()) || (boardy.me.getP() != boardy.getPpl())){
-	    System.out.println("\n SECONDS LEFT: " + boardy.timeLeft(Started));
+	StartTime = System.currentTimeMillis();
+	boardy.setStartTime(StartTime);
+        while( boardy.getGameEnd() == false && boardy.onTime() ){
+	    System.out.println("\n SECONDS LEFT: " + boardy.timeLeft());
         Jim = Keyboard.readWord();
         if(Jim.equals("w")){
             boardy.moveUp();
@@ -35,28 +35,27 @@ public class wooT{
         else{
                 System.out.println(Jim + " is Not a valid move! Please enter 'u' for up, 'd' for down, 'l' for left or 'r' for right'");
         }       
+
         System.out.print(clearScreen + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + "\n LEFT TO PICK UP: " + (boardy.getPpl() - boardy.me.getP()));
-	
+	System.out.println("\nYOU ARE ON TIME: " + boardy.onTime());	
 
 	}
     }
         public static void gamePlay(Board2 boardy){
             int n = 1;
             String gameStatus;
-	    
-            while(boardy.getLost() == false){
-                game(boardy, n);
-                if(boardy.onTime(Started)){
-        System.out.println("You delivered passengers on time! Good job.");
+	    while(boardy.getLost() == false){
+		 game(boardy, n);
+		 if(boardy.me.getP() == boardy.getPpl() && boardy.onTime()){
+        System.out.println("You delivered passengers on time and go to the terminal! Good job.");
                 n+=1;
                 Board2 newGame2 = new Board2(boardy.getCols() +  1, boardy.getRows() + 1);
                 boardy = newGame2;
 		}
 		else {
-		    boardy.setLost(true);
-	    }
-	    }
-            System.out.println("You ran out of time! Would you like to play again?");
+		    boardy.setLost(true);}
+	}
+        System.out.println("You ran out of time! Would you like to play again?");
         gameStatus = Keyboard.readWord();
         if (gameStatus.equals("yes")){
              Board2 newGame2 = new Board2(boardy.getCols(), boardy.getRows());
