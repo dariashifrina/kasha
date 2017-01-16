@@ -40,9 +40,7 @@ public class timeTest{
        System.out.println("TIME'S UP!");
     }
 
-
-
-    
+      
     public static void main(String[] args){
 	//timeUp(5);
 	//timeUp(3);

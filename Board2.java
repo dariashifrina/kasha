@@ -11,6 +11,7 @@ public class Board2{
     private ArrayList<Integer> passengerXCor;
     private ArrayList<Integer> passengerYCor;
     private int fastestMoves = 0;
+    private int Time = 0;
     Train me = new Train();
     Terminal Teddy = new Terminal();
 
@@ -248,6 +249,31 @@ public void setLost(boolean here){
 public int boardGetM(){
 	return me.getM();
 }
+
+public  int timeLeft(long StartTime){
+    int n = Time;
+    int secondsLeft;
+        long Syd = 0;
+        double secondsElapsed = 0;
+        secondsLeft = n;
+        Syd =  System.currentTimeMillis();
+        secondsElapsed = ((Syd - StartTime) / 1000.0);
+        secondsLeft = n - (int)secondsElapsed;  
+	return secondsLeft;
+    }
+
+    public void setTime(int n){
+	Time = n;
+    }
+    public void resetTime(){
+	Time = 0;
+    }
+
+    
+    public boolean onTime(long StartTime){
+	return timeLeft(StartTime) > 0;
+    } 
+    
     public static void main(String[] args){
     }
 }
