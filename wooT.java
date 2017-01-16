@@ -11,8 +11,7 @@ public class wooT{
         }
         //boardy.addPerson(1, 1);
         //.addPerson(4,4);
-        boardy.calcFastestPath();
-        System.out.println(clearScreen + boardy);
+        System.out.println(clearScreen + "LEVEL " + difficulty + "\n" + boardy);
 	long StartTime;
         String Jim;
 	StartTime = System.currentTimeMillis();
@@ -36,15 +35,18 @@ public class wooT{
                 System.out.println(Jim + " is Not a valid move! Please enter 'u' for up, 'd' for down, 'l' for left or 'r' for right'");
         }       
 
-        System.out.print(clearScreen + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + "\n LEFT TO PICK UP: " + (boardy.getPpl() - boardy.me.getP()));
+        System.out.print(clearScreen + "LEVEL " + difficulty + "\n" + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + "\n LEFT TO PICK UP: " + (boardy.getPpl() - boardy.me.getP()));
 	System.out.println("\nYOU ARE ON TIME: " + boardy.onTime());	
 
 	}
+	System.out.println("UH OH!");
     }
         public static void gamePlay(Board2 boardy){
             int n = 1;
             String gameStatus;
+	    
 	    while(boardy.getLost() == false){
+
 		 game(boardy, n);
 		 if(boardy.me.getP() == boardy.getPpl() && boardy.onTime()){
         System.out.println("You delivered passengers on time and go to the terminal! Good job.");
@@ -62,6 +64,10 @@ public class wooT{
                     boardy = newGame2;
                 gamePlay(boardy);
         }
+	else {
+	    System.out.println("Thanks for playing!");
+	    System.exit(0);
+	}
        
         }
 
