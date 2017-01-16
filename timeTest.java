@@ -17,9 +17,36 @@ public class timeTest{
        System.out.println("TIME'S UP!");
     }
 
+    //counts down from n seconds and then prints Time's Up
+    public static void countDown(int n){
+	long David = System.currentTimeMillis();
+	long Syd = 0;
+        double secondsElapsed = 0;
+	int secsLeft = n;
+       	 //used in comparison to seconds left to prevent multiple print seconds
+	// for the same second
+	int bam = n;
+	
+	while(secondsElapsed < n){
+     	    Syd =  System.currentTimeMillis();
+	    secondsElapsed = ((Syd - David) / 1000.0);
+	    secsLeft = n - (int)secondsElapsed;
+	    if (bam != secsLeft){
+      	    System.out.println("Seconds Left: " + secsLeft);
+	    }
+	  
+	    bam = secsLeft;
+    	}
+       System.out.println("TIME'S UP!");
+    }
+
+
+
     
     public static void main(String[] args){
-	timeUp(5);
-	timeUp(3);
+	//timeUp(5);
+	//timeUp(3);
+	countDown(5);
+	countDown(20);
     }
 }
