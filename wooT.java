@@ -1,13 +1,31 @@
 import cs1.Keyboard;
 public class wooT{
-    //public static int level = 1;                                                                  
+    //public static int level = 1;                                                  
     public static String clearScreen = "\u001b[2J\u001b[H";
+    public static String alphaBet= "abcdefghijklmnopqrstuvwxyz";
+    public static void word(int length){
+    String retStr = '';
+    for (int i = 0; i < length; i ++){
+	int numberPicked = (int)(Math.random() * 26);
+	retString += alphabet.substring(numberPicked, numberPicked + 1);
+    }
+    }
+
     public static void game(Board2 boardy, int difficulty){
+	String up ="";
+	String down = "";
+	String left ="";
+	String right = "";
         boardy.addTerminal();
         boardy.addTrain();
 	boardy.setTime(10 * difficulty);
-        for(int passPlaced = 0; passPlaced < difficulty + 2; passPlaced++){
+	for(int passPlaced = 0; passPlaced < difficulty + 2; passPlaced++){
             boardy.addPerson((int)(Math.random() * boardy.getRows()), (int)(Math.random() * boardy.getRows()));
+	}
+	    if(difficulty > 5){
+	    for(int passPlaced = 5; passPlaced < difficulty + 2; passPlaced++){
+            boardy.addPerson((int)(Math.random() * boardy.getRows()), (int)(Math.random() * boardy.getRows()));
+	    }
         }
         //boardy.addPerson(1, 1);
         //.addPerson(4,4);
