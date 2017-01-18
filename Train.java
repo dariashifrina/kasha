@@ -1,4 +1,4 @@
-public class Train{
+public class Train extend BoardPlayers{
     private int xcor = 0;
     private int ycor = 0;
     private int numPickedUp = 0;
@@ -7,7 +7,7 @@ public class Train{
     public String colorStart = "\u001B[32m"; //GREEN
     public String colorEnd = "\u001B[0m";
     
-    public String toString(){
+    /*   public String toString(){
 	return "|_" + "@" + "_";
     }
     public void setCords(int x, int  y){
@@ -19,7 +19,7 @@ public class Train{
     
     public int getYcor(){
 	return ycor;
-    }
+	}*/
     public void inP(){
 	numPickedUp += 1;
     }

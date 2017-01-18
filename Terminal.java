@@ -1,11 +1,8 @@
-public class Terminal{
+public class Terminal extends BoardPlayers{
 	    //sets color of passenger toString to red
     public static String colorStart = "\u001B[35m";
     public static String colorEnd = "\u001B[0m";
-    private int xcor;
-    private int ycor;
-    
-    public String toString(){
+    /*  public String toString(){
 	return "|_" + "$" + "_";
     }
     public int getXCor(){
@@ -13,9 +10,9 @@ public class Terminal{
     }
     public int getYCor(){
         return ycor;
-    }
-    public void setCords(int x, int y){
+	}*/
+    /*   public void setCords(int x, int y){
 	xcor = x;
 	ycor = y;
-    }
+	}*/
 }
