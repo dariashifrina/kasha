@@ -58,7 +58,7 @@ Dasha and Karina:: worked on Woo.java in class, used KtS to
 draw out 2d array algorithm to create a grid
 ==============================================================
 
-2016-01-12
+2017-01-12
 --------------------------------------------------------------
 Dasha and Karina :: began coding grid algorithm in class
 Karina :: completed grid algorithm, which uses a 2d object array
@@ -80,15 +80,30 @@ object can now move in any direction
 work in a nonstatic context
 -Make terminal reprint board on the same line instead of printing a board out each time.
 ==============================================================
-
-2016-01-dd
+2017-01-13 Awakeover Part 1
 --------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Karina and Dasha :: grid now refreshes in the same spot on terminal
+       	   	   -reference file for outside data + Terminal file.
+		   - no longer static.
+		   - MVP complete.
 ==============================================================
 
-2016-01-dd
+2016-01-14 Awakeover Part 2
 --------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Karina and Dasha :: move around on the board.
+       	   	   - pick up passengers and bring them to terminal.
+		   - can't finish game unless all passengers are picked up.
+		   - quickest path for AI calculated(not actually quickest
+		     (but its 1 million dollars).
+		   - counts number of steps.
+		   - LEVELS!!!
+		   - increments of grid.
+==============================================================
+2016-01-15
+--------------------------------------------------------------
+Karina: time methods added. there is a countdown to make playing harder.
+==============================================================
+2016-01-16
+--------------------------------------------------------------
+Karina :: perfected time.
 ==============================================================

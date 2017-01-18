@@ -3,13 +3,30 @@ public class woo3{
     //public static int level = 1;                                                                  
     public static String clearScreen = "\u001b[2J\u001b[H";
 
+    public static void word(int length){
+	public static String alphaBet = "abcdefghijklmnopqrstuvwxyz";
+	String retString = "";
+	for(int i = 0; i < length; i++){
+	    int numberPicked = (int)(Math.random() * 26);
+	    retString += alphaBet.substring((int)(numberPicked, numberPicked + 1);
+	}
+    }
     public static void game(Board2 boardy, int difficulty){
-	long startTime = System.currentTimeMillis();
+	String up = "";
+	String down = "";
+	String left = "";
+	String right = "";
         boardy.addTerminal();
         boardy.addTrain();
         for(int passPlaced = 0; passPlaced < difficulty + 2; passPlaced++){
             boardy.addPerson((int)(Math.random() * boardy.getRows()), (int)(Math.random() * boardy.getRows()));
         }
+	if(difficulty > 5){
+        for(int passPlaced = 5; passPlaced < difficulty + 2; passPlaced++){
+	    up = word(difficulty);
+	    down = 
+	    
+	}
         //boardy.addPerson(1, 1);
         //.addPerson(4,4);
         boardy.calcFastestPath();
@@ -17,16 +34,16 @@ public class woo3{
         String Jim;
         while( !(boardy.getGameEnd()) || (boardy.me.getP() != boardy.getPpl())){
         Jim = Keyboard.readWord();
-        if(Jim.equals("w")){
+        if(Jim.equals(up)){
             boardy.moveUp();
             }
-        if(Jim.equals("s")){
+        if(Jim.equals(down)){
             boardy.moveDown();
             }
-        if(Jim.equals("a")){
+        if(Jim.equals(left)){
             boardy.moveLeft();
             }
-        if(Jim.equals("d")){
+        if(Jim.equals(right)){
             boardy.moveRight();
             }
         else{

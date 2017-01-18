@@ -2,14 +2,9 @@ import cs1.Keyboard;
 public class wooT{
     //public static int level = 1;                                                  
     public static String clearScreen = "\u001b[2J\u001b[H";
-    public static String alphaBet= "abcdefghijklmnopqrstuvwxyz";
-    public static void word(int length){
-    String retStr = '';
-    for (int i = 0; i < length; i ++){
-	int numberPicked = (int)(Math.random() * 26);
-	retString += alphabet.substring(numberPicked, numberPicked + 1);
-    }
-    }
+    
+    
+    
 
     public static void game(Board2 boardy, int difficulty){
 	String up ="";
@@ -21,10 +16,18 @@ public class wooT{
 	boardy.setTime(10 * difficulty);
 	for(int passPlaced = 0; passPlaced < difficulty + 2; passPlaced++){
             boardy.addPerson((int)(Math.random() * boardy.getRows()), (int)(Math.random() * boardy.getRows()));
+	    up = "cat";
+	    down = "java";
+	    left = "dog";
+	    right = "ring";
 	}
 	    if(difficulty > 5){
 	    for(int passPlaced = 5; passPlaced < difficulty + 2; passPlaced++){
-            boardy.addPerson((int)(Math.random() * boardy.getRows()), (int)(Math.random() * boardy.getRows()));
+		boardy.addPerson((int)(Math.random() * boardy.getRows()), (int)(Math.random() * boardy.getRows()));
+		up = StringThings.word(difficulty);
+		down = StringThings.word(difficulty);
+		left = StringThings.word(difficulty);
+		right = StringThings.word(difficulty);
 	    }
         }
         //boardy.addPerson(1, 1);
@@ -37,16 +40,16 @@ public class wooT{
         while( boardy.getGameEnd() == false && boardy.onTime() ){
 	    System.out.println("\n SECONDS LEFT: " + boardy.timeLeft());
         Jim = Keyboard.readWord();
-        if(Jim.equals("w")){
+        if(Jim.equals(up)){
             boardy.moveUp();
             }
-        if(Jim.equals("s")){
+        if(Jim.equals(down)){
             boardy.moveDown();
             }
-        if(Jim.equals("a")){
+        if(Jim.equals(left)){
             boardy.moveLeft();
             }
-        if(Jim.equals("d")){
+        if(Jim.equals(right)){
             boardy.moveRight();
             }
         else{
@@ -55,6 +58,7 @@ public class wooT{
 
         System.out.print(clearScreen + "LEVEL " + difficulty + "\n" + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + "\n LEFT TO PICK UP: " + (boardy.getPpl() - boardy.me.getP()));
 	System.out.println("\nYOU ARE ON TIME: " + boardy.onTime());	
+	System.out.println("LEFT: " + left + "\n RIGHT: " + right + "\n UP: " + up + "\n DOWN: " + down );
 
 	}
 	System.out.println("UH OH!");
