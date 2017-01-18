@@ -100,8 +100,8 @@ public class Board2{
       postcond: moves whatever is at the current slot to a new slot.
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     public void moveUp(){
-	int x = me.getXcor() - 1;
-	int y = me.getYcor();
+	int x = me.getXCor() - 1;
+	int y = me.getYCor();
 	try{
 	     if (board[x][y] instanceof Passenger){
 		me.inP(); //increases counter of passengers by 1
@@ -114,7 +114,7 @@ public class Board2{
 		gameOver = true; 
 	    }
 	    board[x][y] = me;
-	    board[me.getXcor()][me.getYcor()] = "|___";
+	    board[me.getXCor()][me.getYCor()] = "|___";
 	    me.setCords(x, y);
 	    me.inM();
 	}
@@ -126,8 +126,8 @@ public class Board2{
 
     //MOVE DOWN
     public void moveDown(){
-	int x = me.getXcor() + 1;
-	int y = me.getYcor();
+	int x = me.getXCor() + 1;
+	int y = me.getYCor();
 	try{
 	     if (board[x][y] instanceof Passenger){
 		me.inP(); //increases counter of passengers by 1
@@ -140,7 +140,7 @@ public class Board2{
 	       		gameOver = true; //increases counter of passengers by 1
 		}
 	    board[x][y] = me;
-	    board[me.getXcor()][me.getYcor()] = "|___";
+	    board[me.getXCor()][me.getYCor()] = "|___";
 	    me.setCords(x, y);
 	    me.inM();
 	}
@@ -152,8 +152,8 @@ public class Board2{
 
     //MOVE RIGHT
     public void moveRight(){
-	int x = me.getXcor();
-	int y = me.getYcor() + 1;
+	int x = me.getXCor();
+	int y = me.getYCor() + 1;
 	try{
 	    if (board[x][y] instanceof Passenger){
 		me.inP(); //increases counter of passengers by 1
@@ -166,7 +166,7 @@ public class Board2{
 		gameOver = true; //increases counter of passengers by 1
 	    }
 	    board[x][y] = me;
-	    board[me.getXcor()][me.getYcor()] = "|___";
+	    board[me.getXCor()][me.getYCor()] = "|___";
 	    me.setCords(x, y);
 	    me.inM();
 	}
@@ -177,8 +177,8 @@ public class Board2{
 	
     //MOVE LEFT
         public void moveLeft(){
-	int x = me.getXcor();
-	int y = me.getYcor() - 1;
+	int x = me.getXCor();
+	int y = me.getYCor() - 1;
 	try{
 	     if (board[x][y] instanceof Passenger){
 		me.inP(); //increases counter of passengers by 1
@@ -191,7 +191,7 @@ public class Board2{
 		gameOver = true; //increases counter of passengers by 1
 	    }
 	    board[x][y] = me;
-	    board[me.getXcor()][me.getYcor()] = "|___";
+	    board[me.getXCor()][me.getYCor()] = "|___";
 	    me.setCords(x, y);
 	    me.inM();
 	}
@@ -212,8 +212,8 @@ public class Board2{
 
 
     public void calcFastestPath(){
-	int checkingXCor = me.getXcor();
-	int checkingYCor = me.getYcor();
+	int checkingXCor = me.getXCor();
+	int checkingYCor = me.getYCor();
 	for (int i = 0; i< ppl + 1; i++){ 
 		if(i < ppl){
 			fastestMoves += Math.abs(passengerXCor.get(i) - checkingXCor) + Math.abs(passengerYCor.get(i) - checkingYCor);

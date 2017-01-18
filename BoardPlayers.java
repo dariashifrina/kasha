@@ -5,7 +5,7 @@ public class BoardPlayers{
 	if(this.getClass().equals("Terminal")){
 	    return "|_" + "$" + "_";
 	}
-	if(this.getClass().equals("Train")){
+	else if(this.getClass().equals("Train")){
 	    return "|_" + "@" + "_";
 	}
 	else{

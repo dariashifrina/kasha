@@ -1,4 +1,4 @@
-public class Train extend BoardPlayers{
+public class Train extends BoardPlayers{
     private int xcor = 0;
     private int ycor = 0;
     private int numPickedUp = 0;
