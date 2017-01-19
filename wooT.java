@@ -2,9 +2,6 @@ import cs1.Keyboard;
 public class wooT{
     //public static int level = 1;                                                  
     public static String clearScreen = "\u001b[2J\u001b[H";
-    
-    
-    
 
     public static void game(Board2 boardy, int difficulty){
 	String up ="";
@@ -17,14 +14,12 @@ public class wooT{
 	for(int passPlaced = 0; passPlaced < difficulty + 2; passPlaced++){
             boardy.addPerson((int)(Math.random() * boardy.getRows()), (int)(Math.random() * boardy.getRows()));
 	}
-
-        System.out.println(clearScreen + "LEVEL " + difficulty + "\n" + boardy);
 	long StartTime;
-        String Jim;
+       	System.out.println(clearScreen + "LEVEL " + difficulty + "\n" + boardy);
 	StartTime = System.currentTimeMillis();
 	boardy.setStartTime(StartTime);
         while( boardy.getGameEnd() == false && boardy.onTime() ){
-
+	    
  		/*if(difficulty <=5){
 		up = StringThings.easyWord(difficulty);
 		down = StringThings.easyWord(difficulty);
@@ -37,8 +32,9 @@ public class wooT{
 		left = StringThings.word(difficulty);
 		right = StringThings.word(difficulty);
 	    }*/
-	    System.out.println("\n SECONDS LEFT: " + boardy.timeLeft());
-        Jim = Keyboard.readWord();
+	String Jim = Keyboard.readWord();
+	System.out.println("\n SECONDS LEFT: " + boardy.timeLeft());
+	
         if(Jim.equals(up)){
             boardy.moveUp();
             }
@@ -66,8 +62,14 @@ public class wooT{
 		left = StringThings.word(difficulty);
 		right = StringThings.word(difficulty);
 	    }
-    System.out.print(clearScreen + "LEVEL " + difficulty + "\n" + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + "\n LEFT TO PICK UP: " + (boardy.getPpl() - boardy.me.getP()) + "\nLEFT: " + left + "\n RIGHT: " + right + "\n UP: " + up + "\n DOWN: " + down );
+
+	System.out.print(clearScreen + "LEVEL " + difficulty + "\n" + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + "\nPASSENGERS LEFT: " + (boardy.getPpl() - boardy.me.getP()));
+	System.out.println("\n\n        UP: " + up);
+	System.out.println("LEFT: " + left + "     RIGHT: " + right);
+	System.out.println( "    DOWN: " + down );
 	System.out.println("\nYOU ARE ON TIME: " + boardy.onTime());	
+	
+        
 	//System.out.println("LEFT: " + left + "\n RIGHT: " + right + "\n UP: " + up + "\n DOWN: " + down );
 
 	}
