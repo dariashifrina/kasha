@@ -14,3 +14,10 @@
 - Down: Up :arrow_down:
 
 #### If the player types Down, they will move Up. Mistyping a word will result in a number of steps deduction, and going in the wrong direction will derail Savvy Susan. As the levels increase, the word difficulty will increase, as well as the amount of time you have to complete the level. :clock2: :clock4: :clock6:
+
+##To play:
+In Terminal, type:
+javac Woo.java
+Then type:
+java Woo
+Off you goooooo!
