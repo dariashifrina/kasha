@@ -16,10 +16,12 @@ public class wooT{
 	}
 	long StartTime;
        	System.out.println(clearScreen + "LEVEL " + difficulty + "\n" + boardy);
+
+	System.out.println("Enter 'ok' to begin");
 	StartTime = System.currentTimeMillis();
 	boardy.setStartTime(StartTime);
         while( boardy.getGameEnd() == false && boardy.onTime() ){
-	    
+	String Jim = Keyboard.readWord();    
  		/*if(difficulty <=5){
 		up = StringThings.easyWord(difficulty);
 		down = StringThings.easyWord(difficulty);
@@ -32,7 +34,7 @@ public class wooT{
 		left = StringThings.word(difficulty);
 		right = StringThings.word(difficulty);
 	    }*/
-	String Jim = Keyboard.readWord();
+	
 	System.out.println("\n SECONDS LEFT: " + boardy.timeLeft());
 	
         if(Jim.equals(up)){
@@ -47,10 +49,11 @@ public class wooT{
         if(Jim.equals(right)){
             boardy.moveRight();
             }
+	else if ( Jim.equals("ok")){ }
         else{
-                System.out.println(Jim + " is Not a valid move! Please try again");
+                System.out.println("\n\n\n\n" + Jim + " is Not a valid move! Please try again");
         }       
-        if(difficulty <=5){
+        if(difficulty <=3){
 		up = StringThings.easyWord();
 		down = StringThings.easyWord();
 		if ( down.equals(up) ) {
@@ -64,6 +67,30 @@ public class wooT{
 		    right = StringThings.easyWord();
 		}
 	}
+
+	if (difficulty > 3 && difficulty <= 5){
+	
+	    up = StringThing.confuse();
+	    if (up.equals("up")){
+		  up = StringThing.confuse();
+	    }
+	    down= StringThing.confuse();
+	    if (down.equals("down")){
+		down= StringThing.confuse();
+	    }
+	    left = StringThings.confuse();
+	    if (left.equals("left")){
+		left = StringThings.confuse();
+	    }
+	    right = StringThing.confuse();
+	    if (right.equals("right")){
+		    right = StringThing.confuse();
+		}
+	}
+		
+		
+	    
+	
         if(difficulty > 5){
 		up = StringThings.word(difficulty);
 		down = StringThings.word(difficulty);
@@ -71,11 +98,10 @@ public class wooT{
 		right = StringThings.word(difficulty);
 	    }
 
-	System.out.print(clearScreen + "LEVEL " + difficulty + "\n" + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + "\nPASSENGERS LEFT: " + (boardy.getPpl() - boardy.me.getP()));
+	System.out.print(clearScreen + "LEVEL " + difficulty + "\n" + boardy + "\n" + "NUM PICKED UP: " + boardy.me.getP() + "\nPASSENGERS LEFT: " + (boardy.getPpl() - boardy.me.getP()));
 	System.out.println("\n\n        UP: " + up);
 	System.out.println("LEFT: " + left + "     RIGHT: " + right);
 	System.out.println( "    DOWN: " + down );
-	System.out.println("\nYOU ARE ON TIME: " + boardy.onTime());	
 	System.out.println("\n TIME LEFT: " + boardy.timeLeft());
 	}
 	System.out.println("UH OH!");
