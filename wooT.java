@@ -68,10 +68,7 @@ public class wooT{
 	System.out.println("LEFT: " + left + "     RIGHT: " + right);
 	System.out.println( "    DOWN: " + down );
 	System.out.println("\nYOU ARE ON TIME: " + boardy.onTime());	
-	
-        
-	//System.out.println("LEFT: " + left + "\n RIGHT: " + right + "\n UP: " + up + "\n DOWN: " + down );
-
+	System.out.println("\n TIME LEFT: " + boardy.timeLeft());
 	}
 	System.out.println("UH OH!");
     }
