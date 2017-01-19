@@ -18,11 +18,11 @@
 ##To play:
 
 ####In Terminal, type:
-'''
+```
 javac Woo.java
-'''
+```
 ####Then type:
-'''
+```
 java Woo
-'''
+```
 ####Off you goooooo!
