@@ -13,31 +13,30 @@ public class wooT{
 	String right = "";
         boardy.addTerminal();
         boardy.addTrain();
-	boardy.setTime(10 * difficulty);
+	boardy.setTime(30 * difficulty);
 	for(int passPlaced = 0; passPlaced < difficulty + 2; passPlaced++){
             boardy.addPerson((int)(Math.random() * boardy.getRows()), (int)(Math.random() * boardy.getRows()));
-	    up = "cat";
-	    down = "java";
-	    left = "dog";
-	    right = "ring";
 	}
-	    if(difficulty > 5){
-	    for(int passPlaced = 5; passPlaced < difficulty + 2; passPlaced++){
-		boardy.addPerson((int)(Math.random() * boardy.getRows()), (int)(Math.random() * boardy.getRows()));
-		up = StringThings.word(difficulty);
-		down = StringThings.word(difficulty);
-		left = StringThings.word(difficulty);
-		right = StringThings.word(difficulty);
-	    }
-        }
-        //boardy.addPerson(1, 1);
-        //.addPerson(4,4);
+
         System.out.println(clearScreen + "LEVEL " + difficulty + "\n" + boardy);
 	long StartTime;
         String Jim;
 	StartTime = System.currentTimeMillis();
 	boardy.setStartTime(StartTime);
         while( boardy.getGameEnd() == false && boardy.onTime() ){
+
+ 		/*if(difficulty <=5){
+		up = StringThings.easyWord(difficulty);
+		down = StringThings.easyWord(difficulty);
+		left = StringThings.easyWord(difficulty);
+		right = StringThings.easyWord(difficulty);
+	}
+        if(difficulty > 5){
+		up = StringThings.word(difficulty);
+		down = StringThings.word(difficulty);
+		left = StringThings.word(difficulty);
+		right = StringThings.word(difficulty);
+	    }*/
 	    System.out.println("\n SECONDS LEFT: " + boardy.timeLeft());
         Jim = Keyboard.readWord();
         if(Jim.equals(up)){
@@ -53,12 +52,23 @@ public class wooT{
             boardy.moveRight();
             }
         else{
-                System.out.println(Jim + " is Not a valid move! Please enter 'u' for up, 'd' for down, 'l' for left or 'r' for right'");
+                System.out.println(Jim + " is Not a valid move! Please try again");
         }       
-
-        System.out.print(clearScreen + "LEVEL " + difficulty + "\n" + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + "\n LEFT TO PICK UP: " + (boardy.getPpl() - boardy.me.getP()));
+        if(difficulty <=5){
+		up = StringThings.easyWord();
+		down = StringThings.easyWord();
+		left = StringThings.easyWord();
+		right = StringThings.easyWord();
+	}
+        if(difficulty > 5){
+		up = StringThings.word(difficulty);
+		down = StringThings.word(difficulty);
+		left = StringThings.word(difficulty);
+		right = StringThings.word(difficulty);
+	    }
+    System.out.print(clearScreen + "LEVEL " + difficulty + "\n" + boardy + "\n" + " NUM PICKED UP: " + boardy.me.getP() + "\n LEFT TO PICK UP: " + (boardy.getPpl() - boardy.me.getP()) + "\nLEFT: " + left + "\n RIGHT: " + right + "\n UP: " + up + "\n DOWN: " + down );
 	System.out.println("\nYOU ARE ON TIME: " + boardy.onTime());	
-	System.out.println("LEFT: " + left + "\n RIGHT: " + right + "\n UP: " + up + "\n DOWN: " + down );
+	//System.out.println("LEFT: " + left + "\n RIGHT: " + right + "\n UP: " + up + "\n DOWN: " + down );
 
 	}
 	System.out.println("UH OH!");

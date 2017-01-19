@@ -1,16 +1,18 @@
 public class BoardPlayers{
     protected int xcor;
     protected int ycor;
+    protected String appearance;
     public String toString(){
-	if(this.getClass().equals("Terminal")){
-	    return "|_" + "$" + "_";
-	}
-	else if(this.getClass().equals("Train")){
-	    return "|_" + "@" + "_";
-	}
-	else{
-	    return "|_" + "%" + "_";
-	}
+    	if(this instanceof Train){
+    		return "|_" + "@" + "_";	
+    	}
+    	if(this instanceof Terminal){
+    		return "|_" + "$" + "_";	
+    	}
+    	else{
+    		return "|_" + "%" + "_";	
+    	}
+    	//return appearance;
     }
     public int getXCor(){
 	return xcor;
