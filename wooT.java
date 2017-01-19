@@ -53,8 +53,16 @@ public class wooT{
         if(difficulty <=5){
 		up = StringThings.easyWord();
 		down = StringThings.easyWord();
+		if ( down.equals(up) ) {
+		    down = StringThings.easyWord();}
 		left = StringThings.easyWord();
-		right = StringThings.easyWord();
+		if (left.equals(up) || left.equals(down)){
+		    left = StringThings.easyWord();
+		}
+    		right = StringThings.easyWord();
+		if (right.equals(up) || right.equals(left) || right.equals(down)){
+		    right = StringThings.easyWord();
+		}
 	}
         if(difficulty > 5){
 		up = StringThings.word(difficulty);
