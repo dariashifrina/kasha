@@ -4,7 +4,7 @@ public class StringThings{
 														"nice", "perhaps", "please", "train", "muppet"};
     
 
-    public static String[] confuse{"up", "down", "left", "down"};
+    public static String[] confuse = {"up", "down", "left", "down"};
 
     public static String word(int length){
     String retString = "";
@@ -21,7 +21,7 @@ public class StringThings{
     }
  
    public static String confuse(){
-       int numberPicked = (int)(Math.Random() * confuse.length);
+       int numberPicked = (int)(Math.random() * confuse.length);
        return confuse[numberPicked];
    }
 	

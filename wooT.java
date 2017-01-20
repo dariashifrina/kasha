@@ -70,21 +70,21 @@ public class wooT{
 
 	if (difficulty > 3 && difficulty <= 5){
 	
-	    up = StringThing.confuse();
+	    up = StringThings.confuse();
 	    if (up.equals("up")){
-		  up = StringThing.confuse();
+		  up = StringThings.confuse();
 	    }
-	    down= StringThing.confuse();
+	    down= StringThings.confuse();
 	    if (down.equals("down")){
-		down= StringThing.confuse();
+		down= StringThings.confuse();
 	    }
 	    left = StringThings.confuse();
 	    if (left.equals("left")){
 		left = StringThings.confuse();
 	    }
-	    right = StringThing.confuse();
+	    right = StringThings.confuse();
 	    if (right.equals("right")){
-		    right = StringThing.confuse();
+		    right = StringThings.confuse();
 		}
 	}
 		
