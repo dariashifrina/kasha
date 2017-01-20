@@ -86,6 +86,20 @@ public class wooT{
 	    if (right.equals("right")){
 		    right = StringThings.confuse();
 		}
+	    if ( down.equals(up) ) {
+		    down = StringThings.confuse();
+	    }
+	   if (left.equals(up) || left.equals(down)){
+		    left = StringThings.confuse();
+		}
+	    if (right.equals(up) || right.equals(left) || right.equals(down)){
+		    right = StringThings.confuse();
+		}
+
+
+
+
+
 	}
 		
 		

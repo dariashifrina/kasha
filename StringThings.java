@@ -4,7 +4,7 @@ public class StringThings{
 														"nice", "perhaps", "please", "train", "muppet"};
     
 
-    public static String[] confuse = {"up", "down", "left", "down"};
+    public static String[] confuse = {"up", "down", "left", "down", "east", "west", "north", "south"};
 
     public static String word(int length){
     String retString = "";
