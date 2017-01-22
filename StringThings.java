@@ -1,6 +1,6 @@
 public class StringThings{
     public static String alphaBet= "abcdefghijklmnopqrstuvwxyz";
-    public static String[] randomWords = {"cat","dog","shovel","food","ring","awesome","KtS","cool", "idk", "savvy", "groovy", "moose",
+    public static String[] randomWords = {"cat","dog","shovel","food","ring","awesome","KtS","cool", "idk", "savvy", "groovy", "moose", "apcs", "topher", "shenanigan", "skedaddle", "atmosphere", "logic", "canonical", "salient", "ferocious", "fibonacci", "cocoon", "horseradish" , "propaganda", "amicable", "conundrum", "hackneyed", "intrepid", "opulent", "spontaneous", "wary",  
 														"nice", "perhaps", "please", "train", "muppet"};
     
 

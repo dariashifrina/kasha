@@ -56,14 +56,14 @@ public class wooT{
         if(difficulty <=3){
 		up = StringThings.easyWord();
 		down = StringThings.easyWord();
-		if ( down.equals(up) ) {
+		while ( down.equals(up) ) {
 		    down = StringThings.easyWord();}
 		left = StringThings.easyWord();
-		if (left.equals(up) || left.equals(down)){
+		while (left.equals(up) || left.equals(down)){
 		    left = StringThings.easyWord();
 		}
     		right = StringThings.easyWord();
-		if (right.equals(up) || right.equals(left) || right.equals(down)){
+		while (right.equals(up) || right.equals(left) || right.equals(down)){
 		    right = StringThings.easyWord();
 		}
 	}
@@ -71,28 +71,28 @@ public class wooT{
 	if (difficulty > 3 && difficulty <= 5){
 	
 	    up = StringThings.confuse();
-	    if (up.equals("up")){
+	    while (up.equals("up")){
 		  up = StringThings.confuse();
 	    }
 	    down= StringThings.confuse();
-	    if (down.equals("down")){
+	    while (down.equals("down")){
 		down= StringThings.confuse();
 	    }
 	    left = StringThings.confuse();
-	    if (left.equals("left")){
+	    while (left.equals("left")){
 		left = StringThings.confuse();
 	    }
 	    right = StringThings.confuse();
-	    if (right.equals("right")){
+	    while (right.equals("right")){
 		    right = StringThings.confuse();
 		}
-	    if ( down.equals(up) ) {
+	    while ( down.equals(up) ) {
 		    down = StringThings.confuse();
 	    }
-	   if (left.equals(up) || left.equals(down)){
+	   while (left.equals(up) || left.equals(down)){
 		    left = StringThings.confuse();
 		}
-	    if (right.equals(up) || right.equals(left) || right.equals(down)){
+	    while (right.equals(up) || right.equals(left) || right.equals(down)){
 		    right = StringThings.confuse();
 		}
 
