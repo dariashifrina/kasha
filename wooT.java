@@ -22,21 +22,10 @@ public class wooT{
 	boardy.setStartTime(StartTime);
         while( boardy.getGameEnd() == false && boardy.onTime() ){
 	String Jim = Keyboard.readWord();    
- 		/*if(difficulty <=5){
-		up = StringThings.easyWord(difficulty);
-		down = StringThings.easyWord(difficulty);
-		left = StringThings.easyWord(difficulty);
-		right = StringThings.easyWord(difficulty);
-	}
-        if(difficulty > 5){
-		up = StringThings.word(difficulty);
-		down = StringThings.word(difficulty);
-		left = StringThings.word(difficulty);
-		right = StringThings.word(difficulty);
-	    }*/
+ 	
 	
 	System.out.println("\n SECONDS LEFT: " + boardy.timeLeft());
-	
+
         if(Jim.equals(up)){
             boardy.moveUp();
             }
@@ -51,9 +40,11 @@ public class wooT{
             }
 	else if ( Jim.equals("ok")){ }
         else{
-                System.out.println("\n\n\n\n" + Jim + " is Not a valid move! Please try again");
+	    System.out.println("Looks like you've mispelled a word! You have a 5 second time deduction.");
+	    boardy.setStartTime(boardy.getStartTime() - 4000);
         }       
-        if(difficulty <=3){
+       
+	if(difficulty == 1){
 		up = StringThings.easyWord();
 		down = StringThings.easyWord();
 		while ( down.equals(up) ) {
@@ -68,9 +59,23 @@ public class wooT{
 		}
 	}
 
-	if (difficulty > 3 && difficulty <= 5){
-	
-	    up = StringThings.confuse();
+        if  (difficulty > 3 && difficulty <= 5){
+		up = StringThings.easyWord();
+		down = StringThings.hardWord();
+		while ( down.equals(up) ) {
+		    down = StringThings.hardWord();}
+		left = StringThings.hardWord();
+		while (left.equals(up) || left.equals(down)){
+		    left = StringThings.hardWord();
+		}
+    		right = StringThings.hardWord();
+		while (right.equals(up) || right.equals(left) || right.equals(down)){
+		    right = StringThings.hardWord();
+		}
+	}
+
+	if (difficulty == 2 || difficulty == 3){
+		    up = StringThings.confuse();
 	    while (up.equals("up")){
 		  up = StringThings.confuse();
 	    }
@@ -94,17 +99,9 @@ public class wooT{
 		}
 	    while (right.equals(up) || right.equals(left) || right.equals(down)){
 		    right = StringThings.confuse();
-		}
-
-
-
-
-
+		} 
 	}
-		
-		
-	    
-	
+			
         if(difficulty > 5){
 		up = StringThings.word(difficulty);
 		down = StringThings.word(difficulty);
@@ -118,6 +115,7 @@ public class wooT{
 	System.out.println( "    DOWN: " + down );
 	System.out.println("\n TIME LEFT: " + boardy.timeLeft());
 	}
+	
 	System.out.println("UH OH!");
     }
         public static void gamePlay(Board2 boardy){

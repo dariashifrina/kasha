@@ -254,9 +254,11 @@ public  int timeLeft(){
         secondsLeft = n;
         Syd =  System.currentTimeMillis();
         secondsElapsed = ((Syd - StartTime) / 1000.0);
-        secondsLeft = n - (int)secondsElapsed;  
+        secondsLeft = n - (int)secondsElapsed; 
 	return secondsLeft;
     }
+
+
 
     public void setTime(int n){
 	Time = n;
@@ -274,7 +276,9 @@ public  int timeLeft(){
 	return timeLeft() > 0;
     } 
 
-    
+    public long getStartTime(){
+	return StartTime;
+    }
     public static void main(String[] args){
     }
 }
