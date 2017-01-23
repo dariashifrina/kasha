@@ -107,3 +107,27 @@ Karina: time methods added. there is a countdown to make playing harder.
 --------------------------------------------------------------
 Karina :: perfected time.
 ==============================================================
+2016-01-17
+--------------------------------------------------------------
+Dasha and Karina :: simple words added to game so user has to enter those to move.
+==============================================================
+2016-01-18
+--------------------------------------------------------------
+Dasha: updated readme file.
+      - superclass BoardPlayers created for Terminal, Passenger, and Train 
+        to make gameplay easier.
+Karina: timed version works with words!
+==============================================================
+2016-01-19
+--------------------------------------------------------------
+Karina: same words for 2 directions error fixed.
+       - levels 3-5 made harder
+       - keys are user friendly
+Dasha: patched up superclass/subclass and randomly generated words.
+==============================================================
+2016-01-20
+--------------------------------------------------------------
+Karina: added color
+       - word bank updated
+       - 5 second deduction for misspelling words
+==============================================================
