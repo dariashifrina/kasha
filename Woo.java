@@ -153,7 +153,9 @@ public class woo{
         System.out.println("your job as a train conductor is to pick up the passengers.");
         System.out.println("On your board, they are represented as \u001B[31m%\u001B[0m .");
         System.out.println("Your train and position on the board is \u001B[32m@\u001B[0m .");
-        System.out.println("Here's your grid, populated with some people:\n");
+        System.out.println("Type 'start' to see your board");
+	String Rick = Keyboard.readWord();
+	
                                                                      
         Board newGame = new Board(5, 5);
         gamePlay(newGame);
