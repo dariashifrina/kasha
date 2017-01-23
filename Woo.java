@@ -1,5 +1,5 @@
 import cs1.Keyboard;
-public class Woo{
+public class woo{
     //public static int level = 1;                                                  
     public static String clearScreen = "\u001b[2J\u001b[H";
 
@@ -10,7 +10,7 @@ public class Woo{
 	String right = "";
         boardy.addTerminal();
         boardy.addTrain();
-	boardy.setTime( difficulty * 10 + 40);
+	boardy.setTime( difficulty * 20 + 40);
 	for(int passPlaced = 0; passPlaced < difficulty + 2; passPlaced++){
             boardy.addPerson((int)(Math.random() * boardy.getRows()), (int)(Math.random() * boardy.getRows()));
 	}
@@ -134,7 +134,7 @@ public class Woo{
 		else {
 		    boardy.setLost(true);}
 	}
-        System.out.println("You ran out of time! Would you like to play again?");
+        System.out.println("You ran out of time! Would you like to play again? (Enter 'yes'or 'no')");
         gameStatus = Keyboard.readWord();
         if (gameStatus.equals("yes")){
              Board newGame2 = new Board(boardy.getCols(), boardy.getRows());
