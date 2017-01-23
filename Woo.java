@@ -3,7 +3,7 @@ public class Woo{
     //public static int level = 1;                                                  
     public static String clearScreen = "\u001b[2J\u001b[H";
 
-    public static void game(Board2 boardy, int difficulty){
+    public static void game(Board boardy, int difficulty){
 	String up ="";
 	String down = "";
 	String left ="";
@@ -118,7 +118,7 @@ public class Woo{
 	
 	System.out.println("UH OH!");
     }
-        public static void gamePlay(Board2 boardy){
+        public static void gamePlay(Board boardy){
             int n = 1;
             String gameStatus;
 	    
@@ -128,7 +128,7 @@ public class Woo{
 		 if(boardy.me.getP() == boardy.getPpl() && boardy.onTime()){
         System.out.println("You delivered passengers on time and go to the terminal! Good job.");
                 n+=1;
-                Board2 newGame2 = new Board2(boardy.getCols() +  1, boardy.getRows() + 1);
+                Board newGame2 = new Board(boardy.getCols() +  1, boardy.getRows() + 1);
                 boardy = newGame2;
 		}
 		else {
@@ -137,7 +137,7 @@ public class Woo{
         System.out.println("You ran out of time! Would you like to play again?");
         gameStatus = Keyboard.readWord();
         if (gameStatus.equals("yes")){
-             Board2 newGame2 = new Board2(boardy.getCols(), boardy.getRows());
+             Board newGame2 = new Board(boardy.getCols(), boardy.getRows());
                     boardy = newGame2;
                 gamePlay(boardy);
         }
@@ -155,7 +155,7 @@ public class Woo{
         System.out.println("Your train and position on the board is \u001B[32m@\u001B[0m .");
         System.out.println("Here's your grid, populated with some people:\n");
                                                                      
-        Board2 newGame = new Board2(5, 5);
+        Board newGame = new Board(5, 5);
         gamePlay(newGame);
        /*if(newGame.me.getM() == newGame.getFastestMoves() ){
         System.out.println("You beat Rowdy Robot and delivered passengers in time! Good job.");
