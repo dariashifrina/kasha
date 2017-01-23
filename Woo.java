@@ -152,7 +152,7 @@ public class woo{
         System.out.println("Welcome to Tardy Terminal! Enter your name to continue...");
         System.out.println("your job as a train conductor is to pick up the passengers.");
         System.out.println("On your board, they are represented as \u001B[31m%\u001B[0m .");
-        System.out.println("Your train and position on the board is \u001B[32m@\u001B[0m .");
+        System.out.println("Your train and position on the board is \033[94m@\u001B[0m .");
         System.out.println("Type 'start' to see your board");
 	String Rick = Keyboard.readWord();
 	
