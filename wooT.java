@@ -10,7 +10,7 @@ public class wooT{
 	String right = "";
         boardy.addTerminal();
         boardy.addTrain();
-	boardy.setTime(30 * difficulty);
+	boardy.setTime( difficulty * 10 + 40);
 	for(int passPlaced = 0; passPlaced < difficulty + 2; passPlaced++){
             boardy.addPerson((int)(Math.random() * boardy.getRows()), (int)(Math.random() * boardy.getRows()));
 	}
@@ -39,7 +39,7 @@ public class wooT{
             boardy.moveRight();
             }
 	else if ( Jim.equals("ok")){ }
-        else{
+        else {
 	    System.out.println("Looks like you've mispelled a word! You have a 5 second time deduction.");
 	    boardy.setStartTime(boardy.getStartTime() - 4000);
         }       

@@ -7,10 +7,10 @@ public class BoardPlayers{
     		return "|_" + "@" + "_";	
     	}
     	if(this instanceof Terminal){
-    		return "|_" + "$" + "_";	
+    		return "|_" + "\u001B[35m$\u001B[0m" + "_";	
     	}
     	else{
-    		return "|_" + "%" + "_";	
+    		return "|_" + "\u001B[31m%\u001B[0m" + "_";	
     	}
     	//return appearance;
     }
