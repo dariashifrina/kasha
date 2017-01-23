@@ -5,15 +5,13 @@ pd 04
 ---------------------
 Tardy Terminal
 
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
+choo choo 
+  _____                 . . . . . o o o o o
+  __|[_]|__ ___________ _______    ____      o
+ |[] [] []| [] [] [] [] [_____(__  ][]]_n_n__][.
+_|________|_[_________]_[________]_|__|________)<
+  oo    oo 'oo      oo ' oo    oo 'oo 0000---oo\_
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 /////////// Zone of Reflection \\\\\\\\\\\
@@ -21,6 +19,9 @@ Flesh out each category whenever necessary, appropriate.
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 wow we so BOSS bc...
+We resolved the traveling salesman issue
+by making our levels depend on elapsed
+time instead of number of steps taken.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,17 +30,35 @@ maybe some of these will move into the Obs.Ovrcm section...
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+wow! oo! 
+!!!THE TRAVELING SALESMAN PROBLEM!!!
+Strings can change the appearance of words
+on terminal and clear the screen, which is 
+really cool and helped out project a lot; 
+otherwise, our board would have been 
+reprinting itself like it was in our MVP...
+
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+we realized we could not calculate the
+fastest possible way to pick up all the 
+passengers and get to the terminal, so 
+we made all of our levels dependent on 
+time instead of steps. 
+
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 tales of wisdom gained...
-||||||||||||||||||||||||||||||||||||||||||
-
+1) We learned during our sleepover that sleep
+is necessary for basic thinking
+2) After spending an hour attempting to figure
+out what was wrong with our code and raging, 
+we realized it was a tiny error in our
+Board.java constructor and learned not to
+REDECLARE AN INSTANCE VARIBALE IN THE DARN CONSTRUCTOR
+3)github is awesome
 
 
  ______   ______   __   __   __       ______   _______     
@@ -101,33 +120,37 @@ Karina and Dasha :: move around on the board.
 ==============================================================
 2016-01-15
 --------------------------------------------------------------
-Karina: time methods added. there is a countdown to make playing harder.
+Karina:: Added time methods
+	 - used System.currentTimeMillis()
+	 - created countDown method to make levels harder
 ==============================================================
 2016-01-16
 --------------------------------------------------------------
-Karina :: perfected time.
+Karina :: perfected time; levels end when time runs out.
 ==============================================================
 2016-01-17
 --------------------------------------------------------------
 Dasha and Karina :: simple words added to game so user has to enter those to move.
+Dasha:: finished method word generator 
 ==============================================================
 2016-01-18
 --------------------------------------------------------------
 Dasha: updated readme file.
       - superclass BoardPlayers created for Terminal, Passenger, and Train 
         to make gameplay easier.
-Karina: timed version works with words!
 ==============================================================
 2016-01-19
 --------------------------------------------------------------
-Karina: same words for 2 directions error fixed.
-       - levels 3-5 made harder
-       - keys are user friendly
+Karina: Added confuse() method to word class
+	 - uses words such as up, down, left, right to
+	 disorient the player
 Dasha: patched up superclass/subclass and randomly generated words.
 ==============================================================
-2016-01-20
+2016-01-22
 --------------------------------------------------------------
-Karina: added color
-       - word bank updated
-       - 5 second deduction for misspelling words
+Karina: Added 5 point deduction for mispelled words
+	 - readded colors
+	 -perfected confuse() method
+	 -added hard difficulty words and methods, updated 
+	 general word bank
 ==============================================================
