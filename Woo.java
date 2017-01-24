@@ -1,5 +1,5 @@
 import cs1.Keyboard;
-public class woo{
+public class Woo{
     //public static int level = 1;                                                  
     public static String clearScreen = "\u001b[2J\u001b[H";
 
